@@ -1,0 +1,267 @@
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import { ArrowRight, Battery, Gauge, Users, Zap, Shield, Wrench } from "lucide-react";
+import trikeHero from "@/assets/trike-hero.jpg";
+import trikeDetail from "@/assets/trike-detail.jpg";
+import trikeDashboard from "@/assets/trike-dashboard.jpg";
+
+const Products = () => {
+  const specifications = [
+    { label: "Range", value: "25-30 km", icon: Battery },
+    { label: "Charging Time", value: "150 minutes", icon: Zap },
+    { label: "Battery Life", value: "3 years", icon: Shield },
+    { label: "Max Load", value: "150 kg", icon: Gauge },
+    { label: "Turning Radius", value: "5 feet", icon: Users },
+    { label: "Maintenance", value: "Low", icon: Wrench }
+  ];
+
+  const features = [
+    {
+      title: "Compact & Maneuverable",
+      description: "Turns within 5 feet, perfect for tight spaces and crowded areas. Ideal for campus and urban patrol operations.",
+      image: trikeDetail
+    },
+    {
+      title: "High Stability Design",
+      description: "Reduced tilt during cornering for safer rides. Three-wheel configuration provides superior stability compared to two-wheelers.",
+      image: trikeHero
+    },
+    {
+      title: "Universal Accessibility",
+      description: "Designed for users of all age groups with intuitive controls and comfortable ergonomics.",
+      image: trikeDashboard
+    },
+    {
+      title: "Advanced Battery System",
+      description: "Swappable battery technology for uninterrupted usage. Includes reverse mode option for enhanced maneuverability.",
+      image: trikeDetail
+    }
+  ];
+
+  return (
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section 
+        className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
+        style={{
+          backgroundImage: `url(${trikeHero})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-overlay"></div>
+        
+        <div className="relative z-10 text-center text-primary-foreground px-6 max-w-4xl mx-auto">
+          <h1 className="heading-1 mb-8">
+            Trike 2π
+          </h1>
+          <p className="body-large mb-8 opacity-90">
+            Innovative Electric Patrol Trike for Efficient Mobility
+          </p>
+          <p className="body-regular mb-12 opacity-80 max-w-2xl mx-auto">
+            Built for efficiency, stability, and ease of use, the Trike 2π enhances mobility needs 
+            and security patrolling, ensuring a smoother and more sustainable transport experience.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <Button variant="secondary" size="lg" asChild>
+              <Link to="/contact">Book Demo Ride</Link>
+            </Button>
+            <Button variant="ghost" size="lg" asChild>
+              <Link to="#specifications">View Specs</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Product Overview */}
+      <section className="section-spacing bg-background">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="heading-2 mb-8">Product Overview</h2>
+            <p className="body-large text-muted-foreground max-w-3xl mx-auto">
+              At Elaicle, we are redefining mobility with sustainable, high-performance electric solutions. 
+              Our Trike 2π is a compact three-wheeled electric vehicle, designed for seamless maneuverability 
+              in large campuses and industrial spaces.
+            </p>
+          </div>
+
+          {/* Image Gallery */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+            <div className="lg:col-span-2 aspect-video rounded-2xl overflow-hidden shadow-image hover-scale">
+              <img src={trikeHero} alt="Trike 2π Main View" className="w-full h-full object-cover" />
+            </div>
+            <div className="aspect-square rounded-2xl overflow-hidden shadow-image hover-scale">
+              <img src={trikeDetail} alt="Trike 2π Detail" className="w-full h-full object-cover" />
+            </div>
+            <div className="aspect-square rounded-2xl overflow-hidden shadow-image hover-scale">
+              <img src={trikeDashboard} alt="Trike 2π Dashboard" className="w-full h-full object-cover" />
+            </div>
+            <div className="lg:col-span-2 aspect-video rounded-2xl overflow-hidden shadow-image hover-scale">
+              <img src={trikeDetail} alt="Trike 2π Side View" className="w-full h-full object-cover" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features */}
+      <section className="section-spacing bg-muted/30">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="heading-2 mb-8">Our Features</h2>
+            <p className="body-large text-muted-foreground">
+              Advanced engineering meets user-centric design
+            </p>
+          </div>
+
+          <div className="space-y-16">
+            {features.map((feature, index) => (
+              <div key={feature.title} className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
+                index % 2 === 1 ? 'lg:direction-reverse' : ''
+              }`}>
+                <div className={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
+                  <h3 className="heading-3 mb-6">{feature.title}</h3>
+                  <p className="body-large text-muted-foreground leading-relaxed">
+                    {feature.description}
+                  </p>
+                </div>
+                <div className={`${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+                  <div className="aspect-video rounded-2xl overflow-hidden shadow-image hover-scale">
+                    <img 
+                      src={feature.image} 
+                      alt={feature.title} 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Specifications */}
+      <section id="specifications" className="section-spacing bg-background">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="heading-2 mb-8">Performance Specs</h2>
+            <p className="body-large text-muted-foreground">
+              Engineered for efficiency and reliability
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            {specifications.map((spec) => (
+              <div key={spec.label} className="bg-card rounded-2xl p-8 shadow-card hover:shadow-card-hover transition-all duration-300 text-center hover-scale">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <spec.icon className="w-8 h-8 text-primary" />
+                </div>
+                <div className="heading-3 text-primary mb-2">{spec.value}</div>
+                <div className="body-regular text-muted-foreground">{spec.label}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* Detailed Specs Table */}
+          <div className="bg-card rounded-2xl p-8 shadow-card">
+            <h3 className="heading-3 mb-8 text-center">Detailed Specifications</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <h4 className="heading-4 mb-4 text-primary">Performance</h4>
+                <div className="space-y-3">
+                  <div className="flex justify-between border-b border-border pb-2">
+                    <span className="body-regular text-muted-foreground">Range per Charge</span>
+                    <span className="body-regular font-medium">25-30 km</span>
+                  </div>
+                  <div className="flex justify-between border-b border-border pb-2">
+                    <span className="body-regular text-muted-foreground">Charging Time</span>
+                    <span className="body-regular font-medium">150 minutes</span>
+                  </div>
+                  <div className="flex justify-between border-b border-border pb-2">
+                    <span className="body-regular text-muted-foreground">Battery Life</span>
+                    <span className="body-regular font-medium">~3 years</span>
+                  </div>
+                  <div className="flex justify-between border-b border-border pb-2">
+                    <span className="body-regular text-muted-foreground">Battery Type</span>
+                    <span className="body-regular font-medium">Swappable Li-ion</span>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 className="heading-4 mb-4 text-primary">Physical</h4>
+                <div className="space-y-3">
+                  <div className="flex justify-between border-b border-border pb-2">
+                    <span className="body-regular text-muted-foreground">Max Load Capacity</span>
+                    <span className="body-regular font-medium">150 kg</span>
+                  </div>
+                  <div className="flex justify-between border-b border-border pb-2">
+                    <span className="body-regular text-muted-foreground">Turning Radius</span>
+                    <span className="body-regular font-medium">5 feet</span>
+                  </div>
+                  <div className="flex justify-between border-b border-border pb-2">
+                    <span className="body-regular text-muted-foreground">Occupancy</span>
+                    <span className="body-regular font-medium">Single rider</span>
+                  </div>
+                  <div className="flex justify-between border-b border-border pb-2">
+                    <span className="body-regular text-muted-foreground">Reverse Mode</span>
+                    <span className="body-regular font-medium">Available</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing */}
+      <section className="section-spacing bg-primary">
+        <div className="container mx-auto px-6">
+          <div className="text-center text-primary-foreground">
+            <h2 className="heading-2 mb-8">Pricing</h2>
+            <div className="max-w-md mx-auto bg-primary-foreground/10 rounded-2xl p-8 backdrop-blur-sm">
+              <div className="heading-1 mb-4">₹2.5L</div>
+              <p className="body-large mb-6 opacity-90">Starting Price*</p>
+              <p className="body-small opacity-70 mb-8">*Final pricing may vary based on customization and accessories</p>
+              
+              <div className="space-y-4">
+                <Button variant="secondary" size="lg" className="w-full" asChild>
+                  <Link to="/contact">Request Quote</Link>
+                </Button>
+                <Button variant="ghost" size="lg" className="w-full" asChild>
+                  <Link to="/contact">Schedule Demo</Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="section-spacing bg-background">
+        <div className="container mx-auto px-6">
+          <div className="text-center">
+            <h2 className="heading-2 mb-8">Ready to Experience the Future?</h2>
+            <p className="body-large text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Book a demo ride and experience the Trike 2π firsthand. See how our innovative design 
+              can transform your mobility needs.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button variant="default" size="lg" asChild>
+                <Link to="/contact" className="flex items-center">
+                  Book Demo Ride
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </Link>
+              </Button>
+              <Button variant="secondary" size="lg" asChild>
+                <Link to="/sustainability">Learn About Impact</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default Products;

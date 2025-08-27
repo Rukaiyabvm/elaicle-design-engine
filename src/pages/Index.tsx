@@ -1,12 +1,41 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Hero from "@/components/Hero";
+import AboutPreview from "@/components/AboutPreview";
+import ProductsPreview from "@/components/ProductsPreview";
+import SustainabilityPreview from "@/components/SustainabilityPreview";
+import TestimonialsPreview from "@/components/TestimonialsPreview";
+import { useEffect } from "react";
 
 const Index = () => {
+  useEffect(() => {
+    // Animation trigger for fade-in elements
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, {
+      threshold: 0.1,
+      rootMargin: '50px 0px -50px 0px'
+    });
+
+    // Observe all fade-in elements
+    document.querySelectorAll('.fade-in').forEach((el) => {
+      observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen">
+      <Hero />
+      <AboutPreview />
+      <ProductsPreview />
+      <SustainabilityPreview />
+      <TestimonialsPreview />
     </div>
   );
 };
