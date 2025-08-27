@@ -39,7 +39,7 @@ const About = () => {
       backgroundSize: 'cover',
       backgroundPosition: 'center'
     }}>
-        <div className="absolute inset-0 bg-gradient-overlay"></div>
+        <div className="absolute inset-0 bg-gradient-overlay bg-transparent"></div>
         
         <div className="relative z-10 text-center text-primary-foreground px-6 max-w-4xl mx-auto">
           <h1 className="heading-1 mb-8">
@@ -230,7 +230,7 @@ const About = () => {
       </section>
 
       {/* CTA */}
-      <section className="section-spacing bg-background">
+      <section className="section-spacing bg-blue-100">
         <div className="container mx-auto px-6">
           <div className="text-center">
             <h2 className="heading-2 mb-8">Ready to Join Our Journey?</h2>
