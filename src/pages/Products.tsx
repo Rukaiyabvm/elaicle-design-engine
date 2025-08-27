@@ -4,51 +4,56 @@ import { ArrowRight, Battery, Gauge, Users, Zap, Shield, Wrench } from "lucide-r
 import trikeHero from "@/assets/trike-hero.jpg";
 import trikeDetail from "@/assets/trike-detail.jpg";
 import trikeDashboard from "@/assets/trike-dashboard.jpg";
-
 const Products = () => {
-  const specifications = [
-    { label: "Range", value: "25-30 km", icon: Battery },
-    { label: "Charging Time", value: "150 minutes", icon: Zap },
-    { label: "Battery Life", value: "3 years", icon: Shield },
-    { label: "Max Load", value: "150 kg", icon: Gauge },
-    { label: "Turning Radius", value: "5 feet", icon: Users },
-    { label: "Maintenance", value: "Low", icon: Wrench }
-  ];
-
-  const features = [
-    {
-      title: "Compact & Maneuverable",
-      description: "Turns within 5 feet, perfect for tight spaces and crowded areas. Ideal for campus and urban patrol operations.",
-      image: trikeDetail
-    },
-    {
-      title: "High Stability Design",
-      description: "Reduced tilt during cornering for safer rides. Three-wheel configuration provides superior stability compared to two-wheelers.",
-      image: trikeHero
-    },
-    {
-      title: "Universal Accessibility",
-      description: "Designed for users of all age groups with intuitive controls and comfortable ergonomics.",
-      image: trikeDashboard
-    },
-    {
-      title: "Advanced Battery System",
-      description: "Swappable battery technology for uninterrupted usage. Includes reverse mode option for enhanced maneuverability.",
-      image: trikeDetail
-    }
-  ];
-
-  return (
-    <div className="min-h-screen">
+  const specifications = [{
+    label: "Range",
+    value: "25-30 km",
+    icon: Battery
+  }, {
+    label: "Charging Time",
+    value: "150 minutes",
+    icon: Zap
+  }, {
+    label: "Battery Life",
+    value: "3 years",
+    icon: Shield
+  }, {
+    label: "Max Load",
+    value: "150 kg",
+    icon: Gauge
+  }, {
+    label: "Turning Radius",
+    value: "5 feet",
+    icon: Users
+  }, {
+    label: "Maintenance",
+    value: "Low",
+    icon: Wrench
+  }];
+  const features = [{
+    title: "Compact & Maneuverable",
+    description: "Turns within 5 feet, perfect for tight spaces and crowded areas. Ideal for campus and urban patrol operations.",
+    image: trikeDetail
+  }, {
+    title: "High Stability Design",
+    description: "Reduced tilt during cornering for safer rides. Three-wheel configuration provides superior stability compared to two-wheelers.",
+    image: trikeHero
+  }, {
+    title: "Universal Accessibility",
+    description: "Designed for users of all age groups with intuitive controls and comfortable ergonomics.",
+    image: trikeDashboard
+  }, {
+    title: "Advanced Battery System",
+    description: "Swappable battery technology for uninterrupted usage. Includes reverse mode option for enhanced maneuverability.",
+    image: trikeDetail
+  }];
+  return <div className="min-h-screen">
       {/* Hero Section */}
-      <section 
-        className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
-        style={{
-          backgroundImage: `url(${trikeHero})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center'
-        }}
-      >
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20" style={{
+      backgroundImage: `url(${trikeHero})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center'
+    }}>
         <div className="absolute inset-0 bg-gradient-overlay"></div>
         
         <div className="relative z-10 text-center text-primary-foreground px-6 max-w-4xl mx-auto">
@@ -105,7 +110,7 @@ const Products = () => {
       </section>
 
       {/* Features */}
-      <section className="section-spacing bg-muted/30">
+      <section className="section-spacing bg-gray-200">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="heading-2 mb-8">Our Features</h2>
@@ -115,10 +120,7 @@ const Products = () => {
           </div>
 
           <div className="space-y-16">
-            {features.map((feature, index) => (
-              <div key={feature.title} className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
-                index % 2 === 1 ? 'lg:direction-reverse' : ''
-              }`}>
+            {features.map((feature, index) => <div key={feature.title} className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:direction-reverse' : ''}`}>
                 <div className={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
                   <h3 className="heading-3 mb-6">{feature.title}</h3>
                   <p className="body-large text-muted-foreground leading-relaxed">
@@ -127,15 +129,10 @@ const Products = () => {
                 </div>
                 <div className={`${index % 2 === 1 ? 'lg:order-1' : ''}`}>
                   <div className="aspect-video rounded-2xl overflow-hidden shadow-image hover-scale">
-                    <img 
-                      src={feature.image} 
-                      alt={feature.title} 
-                      className="w-full h-full object-cover"
-                    />
+                    <img src={feature.image} alt={feature.title} className="w-full h-full object-cover" />
                   </div>
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -151,15 +148,13 @@ const Products = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {specifications.map((spec) => (
-              <div key={spec.label} className="bg-card rounded-2xl p-8 shadow-card hover:shadow-card-hover transition-all duration-300 text-center hover-scale">
+            {specifications.map(spec => <div key={spec.label} className="bg-card rounded-2xl p-8 shadow-card hover:shadow-card-hover transition-all duration-300 text-center hover-scale">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
                   <spec.icon className="w-8 h-8 text-primary" />
                 </div>
                 <div className="heading-3 text-primary mb-2">{spec.value}</div>
                 <div className="body-regular text-muted-foreground">{spec.label}</div>
-              </div>
-            ))}
+              </div>)}
           </div>
 
           {/* Detailed Specs Table */}
@@ -260,8 +255,6 @@ const Products = () => {
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default Products;
