@@ -2,58 +2,43 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Lightbulb, Target, Users, Calendar } from "lucide-react";
 import trikeHero from "@/assets/trike-hero.jpg";
-
 const About = () => {
-  const milestones = [
-    {
-      year: "2021",
-      title: "Initial Concept",
-      description: "Our founder conceptualized and developed the initial version of the Trike, addressing mobility requirements and campus patrol needs.",
-      icon: Lightbulb
-    },
-    {
-      year: "2023", 
-      title: "First Pilot Model",
-      description: "Successfully tested the first pilot model in controlled campus premises, validating our design and functionality.",
-      icon: Target
-    },
-    {
-      year: "2023",
-      title: "Public Deployment", 
-      description: "Second pilot model deployed in public settings, experienced by Coimbatore City Patrol Officials with positive feedback.",
-      icon: Users
-    }
-  ];
-
-  const values = [
-    {
-      icon: Lightbulb,
-      title: "Innovation",
-      description: "Pushing boundaries in electric mobility through cutting-edge technology and creative solutions."
-    },
-    {
-      icon: Target,
-      title: "Sustainability", 
-      description: "Committed to reducing environmental impact and promoting circular economy principles."
-    },
-    {
-      icon: Users,
-      title: "Accessibility",
-      description: "Designing mobility solutions that are universal, inclusive, and accessible to all age groups."
-    }
-  ];
-
-  return (
-    <div className="min-h-screen">
+  const milestones = [{
+    year: "2021",
+    title: "Initial Concept",
+    description: "Our founder conceptualized and developed the initial version of the Trike, addressing mobility requirements and campus patrol needs.",
+    icon: Lightbulb
+  }, {
+    year: "2023",
+    title: "First Pilot Model",
+    description: "Successfully tested the first pilot model in controlled campus premises, validating our design and functionality.",
+    icon: Target
+  }, {
+    year: "2023",
+    title: "Public Deployment",
+    description: "Second pilot model deployed in public settings, experienced by Coimbatore City Patrol Officials with positive feedback.",
+    icon: Users
+  }];
+  const values = [{
+    icon: Lightbulb,
+    title: "Innovation",
+    description: "Pushing boundaries in electric mobility through cutting-edge technology and creative solutions."
+  }, {
+    icon: Target,
+    title: "Sustainability",
+    description: "Committed to reducing environmental impact and promoting circular economy principles."
+  }, {
+    icon: Users,
+    title: "Accessibility",
+    description: "Designing mobility solutions that are universal, inclusive, and accessible to all age groups."
+  }];
+  return <div className="min-h-screen">
       {/* Hero Section */}
-      <section 
-        className="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-20"
-        style={{
-          backgroundImage: `url(${trikeHero})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center'
-        }}
-      >
+      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-20" style={{
+      backgroundImage: `url(${trikeHero})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center'
+    }}>
         <div className="absolute inset-0 bg-gradient-overlay"></div>
         
         <div className="relative z-10 text-center text-primary-foreground px-6 max-w-4xl mx-auto">
@@ -89,7 +74,7 @@ const About = () => {
       </section>
 
       {/* Timeline */}
-      <section className="section-spacing bg-muted/30">
+      <section className="section-spacing bg-slate-100">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="heading-2 mb-8">Our Milestones</h2>
@@ -100,12 +85,9 @@ const About = () => {
 
           <div className="max-w-4xl mx-auto">
             <div className="space-y-12">
-              {milestones.map((milestone, index) => (
-                <div key={milestone.year} className="relative">
+              {milestones.map((milestone, index) => <div key={milestone.year} className="relative">
                   {/* Timeline line */}
-                  {index !== milestones.length - 1 && (
-                    <div className="absolute left-6 top-16 w-0.5 h-24 bg-primary/20 hidden md:block"></div>
-                  )}
+                  {index !== milestones.length - 1 && <div className="absolute left-6 top-16 w-0.5 h-24 bg-primary/20 hidden md:block"></div>}
                   
                   <div className="flex flex-col md:flex-row items-start md:items-center space-y-4 md:space-y-0 md:space-x-8">
                     {/* Year & Icon */}
@@ -122,8 +104,7 @@ const About = () => {
                       <p className="body-regular text-muted-foreground">{milestone.description}</p>
                     </div>
                   </div>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </div>
@@ -161,8 +142,7 @@ const About = () => {
             <div>
               <h3 className="heading-3 mb-8">Our Values</h3>
               <div className="space-y-6">
-                {values.map((value) => (
-                  <div key={value.title} className="flex items-start space-x-4">
+                {values.map(value => <div key={value.title} className="flex items-start space-x-4">
                     <div className="flex-shrink-0">
                       <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
                         <value.icon className="w-6 h-6 text-primary" />
@@ -172,8 +152,7 @@ const About = () => {
                       <h4 className="heading-4 mb-2">{value.title}</h4>
                       <p className="body-regular text-muted-foreground">{value.description}</p>
                     </div>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </div>
           </div>
@@ -220,27 +199,22 @@ const About = () => {
 
           <div className="max-w-4xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                {
-                  year: "2027",
-                  title: "Market Leadership",
-                  description: "Establish a strong market presence by capturing 20% of the Indian market share.",
-                  icon: Target
-                },
-                {
-                  year: "2030", 
-                  title: "Revenue Milestone",
-                  description: "Achieve ₹300 million in annual revenue, demonstrating significant business growth.",
-                  icon: Calendar
-                },
-                {
-                  year: "2035",
-                  title: "Industry Leader",
-                  description: "Solidify position as a leading manufacturer in the electric vehicle industry.",
-                  icon: Users
-                }
-              ].map((goal, index) => (
-                <div key={`${goal.year}-${index}`} className="text-center">
+              {[{
+              year: "2027",
+              title: "Market Leadership",
+              description: "Establish a strong market presence by capturing 20% of the Indian market share.",
+              icon: Target
+            }, {
+              year: "2030",
+              title: "Revenue Milestone",
+              description: "Achieve ₹300 million in annual revenue, demonstrating significant business growth.",
+              icon: Calendar
+            }, {
+              year: "2035",
+              title: "Industry Leader",
+              description: "Solidify position as a leading manufacturer in the electric vehicle industry.",
+              icon: Users
+            }].map((goal, index) => <div key={`${goal.year}-${index}`} className="text-center">
                   <div className="bg-card rounded-2xl p-8 shadow-card hover:shadow-card-hover transition-all duration-300 hover-scale">
                     <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
                       <goal.icon className="w-8 h-8 text-primary" />
@@ -249,8 +223,7 @@ const About = () => {
                     <h3 className="heading-4 mb-4">{goal.title}</h3>
                     <p className="body-regular text-muted-foreground">{goal.description}</p>
                   </div>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </div>
@@ -273,8 +246,6 @@ const About = () => {
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default About;
