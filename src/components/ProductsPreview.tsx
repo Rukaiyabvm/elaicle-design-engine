@@ -3,31 +3,24 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Battery, Gauge, Users } from "lucide-react";
 import trikeDetail from "@/assets/trike-detail.jpg";
 import trikeDashboard from "@/assets/trike-dashboard.jpg";
-
 const ProductsPreview = () => {
-  const features = [
-    {
-      icon: Battery,
-      title: "Long Range",
-      value: "25-30km",
-      description: "Extended range with swappable battery technology"
-    },
-    {
-      icon: Gauge,
-      title: "Fast Charging",
-      value: "150min",
-      description: "Quick charge for uninterrupted mobility"
-    },
-    {
-      icon: Users,
-      title: "Universal Design",
-      value: "All Ages",
-      description: "Designed for users of all age groups"
-    }
-  ];
-
-  return (
-    <section className="section-spacing bg-muted/30">
+  const features = [{
+    icon: Battery,
+    title: "Long Range",
+    value: "25-30km",
+    description: "Extended range with swappable battery technology"
+  }, {
+    icon: Gauge,
+    title: "Fast Charging",
+    value: "150min",
+    description: "Quick charge for uninterrupted mobility"
+  }, {
+    icon: Users,
+    title: "Universal Design",
+    value: "All Ages",
+    description: "Designed for users of all age groups"
+  }];
+  return <section className="section-spacing bg-zinc-200">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16 fade-in">
@@ -51,26 +44,14 @@ const ProductsPreview = () => {
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
                 <div className="aspect-square rounded-2xl overflow-hidden shadow-image hover-scale">
-                  <img 
-                    src={trikeDetail} 
-                    alt="Trike 2π Detail View" 
-                    className="w-full h-full object-cover"
-                  />
+                  <img src={trikeDetail} alt="Trike 2π Detail View" className="w-full h-full object-cover" />
                 </div>
                 <div className="aspect-video rounded-2xl overflow-hidden shadow-image hover-scale">
-                  <img 
-                    src={trikeDashboard} 
-                    alt="Trike 2π Dashboard" 
-                    className="w-full h-full object-cover"
-                  />
+                  <img src={trikeDashboard} alt="Trike 2π Dashboard" className="w-full h-full object-cover" />
                 </div>
               </div>
               <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-image hover-scale">
-                <img 
-                  src={trikeDetail} 
-                  alt="Trike 2π Full View" 
-                  className="w-full h-full object-cover"
-                />
+                <img src={trikeDetail} alt="Trike 2π Full View" className="w-full h-full object-cover" />
               </div>
             </div>
           </div>
@@ -79,8 +60,7 @@ const ProductsPreview = () => {
           <div className="fade-in">
             <h3 className="heading-3 mb-8">Key Features</h3>
             <div className="space-y-6 mb-8">
-              {features.map((feature, index) => (
-                <div key={feature.title} className="flex items-start space-x-4">
+              {features.map((feature, index) => <div key={feature.title} className="flex items-start space-x-4">
                   <div className="flex-shrink-0">
                     <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
                       <feature.icon className="w-6 h-6 text-primary" />
@@ -93,8 +73,7 @@ const ProductsPreview = () => {
                     </div>
                     <p className="body-regular text-muted-foreground">{feature.description}</p>
                   </div>
-                </div>
-              ))}
+                </div>)}
             </div>
 
             <div className="space-y-4">
@@ -116,22 +95,29 @@ const ProductsPreview = () => {
 
         {/* Additional Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 fade-in">
-          {[
-            { title: "Compact & Maneuverable", value: "5ft", desc: "Turning radius" },
-            { title: "High Stability", value: "Low", desc: "Tilt during cornering" },
-            { title: "Max Load Capacity", value: "150kg", desc: "Single occupant" },
-            { title: "Battery Life", value: "3 Years", desc: "Swappable design" }
-          ].map((item, index) => (
-            <div key={item.title} className="text-center p-6 bg-card rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300">
+          {[{
+          title: "Compact & Maneuverable",
+          value: "5ft",
+          desc: "Turning radius"
+        }, {
+          title: "High Stability",
+          value: "Low",
+          desc: "Tilt during cornering"
+        }, {
+          title: "Max Load Capacity",
+          value: "150kg",
+          desc: "Single occupant"
+        }, {
+          title: "Battery Life",
+          value: "3 Years",
+          desc: "Swappable design"
+        }].map((item, index) => <div key={item.title} className="text-center p-6 bg-card rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300">
               <div className="heading-3 text-primary mb-2">{item.value}</div>
               <div className="heading-4 mb-2">{item.title}</div>
               <div className="body-small text-muted-foreground">{item.desc}</div>
-            </div>
-          ))}
+            </div>)}
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ProductsPreview;
