@@ -21,7 +21,7 @@ const Navigation = () => {
     { name: "About", href: "/about" },
     { name: "Products", href: "/products" },
     { name: "Sustainability", href: "/sustainability" },
-    { name: "Testimonials", href: "/testimonials" },
+    
     { name: "News", href: "/news" },
     { name: "Contact", href: "/contact" },
   ];
@@ -68,14 +68,14 @@ const Navigation = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2"
+            className="lg:hidden p-2 text-foreground hover:text-primary transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? (
-              <X className="w-6 h-6" />
-            ) : (
-              <Menu className="w-6 h-6" />
-            )}
+        {isMobileMenuOpen ? (
+          <X className="w-6 h-6 text-foreground" />
+        ) : (
+          <Menu className="w-6 h-6 text-foreground" />
+        )}
           </button>
         </div>
 

@@ -239,8 +239,8 @@ const About = () => {
                   description: "Solidify position as a leading manufacturer in the electric vehicle industry.",
                   icon: Users
                 }
-              ].map((goal) => (
-                <div key={goal.year} className="text-center">
+              ].map((goal, index) => (
+                <div key={`${goal.year}-${index}`} className="text-center">
                   <div className="bg-card rounded-2xl p-8 shadow-card hover:shadow-card-hover transition-all duration-300 hover-scale">
                     <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
                       <goal.icon className="w-8 h-8 text-primary" />
