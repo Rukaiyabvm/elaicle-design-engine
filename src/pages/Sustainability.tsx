@@ -115,7 +115,7 @@ const Sustainability = () => {
       </section>
 
       {/* Mission Statement */}
-      <section className="section-spacing bg-background">
+      <section className="section-spacing bg-emerald-50">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="heading-2 mb-8">Our Commitment</h2>
