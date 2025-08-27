@@ -152,12 +152,12 @@ const TestimonialsPreview = () => {
 
         {/* CTA */}
         <div className="text-center fade-in">
-            <Button variant="default" size="lg" asChild>
-              <Link to="/contact" className="flex items-center">
-                Contact Us
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </Link>
-            </Button>
+          <Button variant="default" size="lg" asChild>
+            <Link to="/testimonials" className="flex items-center">
+              Read More Reviews
+              <ArrowRight className="ml-2 w-4 h-4" />
+            </Link>
+          </Button>
         </div>
       </div>
     </section>

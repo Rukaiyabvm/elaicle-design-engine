@@ -3,106 +3,143 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Leaf, Zap, Recycle, Target, Users, Building, Battery } from "lucide-react";
 import { useState, useEffect } from "react";
 import sustainabilityHero from "@/assets/sustainability-hero.jpg";
+
 const Sustainability = () => {
   const [isVisible, setIsVisible] = useState(false);
+
   useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        setIsVisible(true);
-      }
-    }, {
-      threshold: 0.3
-    });
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
     const element = document.getElementById('impact-metrics');
     if (element) observer.observe(element);
+
     return () => observer.disconnect();
   }, []);
-  const CountUpNumber = ({
-    end,
-    duration = 2000,
-    isVisible
-  }) => {
+
+  const CountUpNumber = ({ end, duration = 2000, isVisible }) => {
     const [count, setCount] = useState(0);
+
     useEffect(() => {
       if (!isVisible) return;
+
       let startTime;
       const startValue = 0;
       const endValue = parseInt(end);
-      const animate = currentTime => {
+
+      const animate = (currentTime) => {
         if (!startTime) startTime = currentTime;
         const progress = Math.min((currentTime - startTime) / duration, 1);
+        
         setCount(Math.floor(progress * (endValue - startValue) + startValue));
+
         if (progress < 1) {
           requestAnimationFrame(animate);
         }
       };
+
       requestAnimationFrame(animate);
     }, [end, duration, isVisible]);
+
     return <span>{count}</span>;
   };
-  const impactMetrics = [{
-    icon: Leaf,
-    value: "50+",
-    unit: "tonnes",
-    label: "CO₂ Emissions Reduced",
-    description: "Through our electric mobility solutions",
-    color: "text-success"
-  }, {
-    icon: Zap,
-    value: "95",
-    unit: "%",
-    label: "Energy Efficiency",
-    description: "Compared to traditional vehicles",
-    color: "text-warning"
-  }, {
-    icon: Recycle,
-    value: "100",
-    unit: "%",
-    label: "Battery Recyclability",
-    description: "Full circular economy implementation",
-    color: "text-primary"
-  }, {
-    icon: Target,
-    value: "3",
-    unit: "SDGs",
-    label: "UN Goals Aligned",
-    description: "Contributing to global sustainability",
-    color: "text-success"
-  }];
-  const sdgData = [{
-    number: "7",
-    title: "Affordable and Clean Energy",
-    description: "By developing energy-efficient battery technologies and promoting clean energy solutions for mobility.",
-    icon: Zap,
-    initiatives: ["Advanced lithium-ion battery development", "Solar charging station integration", "Energy storage optimization"]
-  }, {
-    number: "9",
-    title: "Industry, Innovation, and Infrastructure",
-    description: "Through continuous innovation in micro-mobility and energy storage, enhancing sustainable infrastructure.",
-    icon: Building,
-    initiatives: ["R&D in micro-mobility solutions", "Smart charging infrastructure", "Technology transfer programs"]
-  }, {
-    number: "11",
-    title: "Sustainable Cities and Communities",
-    description: "By creating eco-friendly transportation solutions that reduce urban congestion and carbon emissions.",
-    icon: Users,
-    initiatives: ["Urban patrol vehicle deployment", "Campus mobility solutions", "Community engagement programs"]
-  }];
-  return <div className="min-h-screen">
+
+  const impactMetrics = [
+    {
+      icon: Leaf,
+      value: "50+",
+      unit: "tonnes",
+      label: "CO₂ Emissions Reduced",
+      description: "Through our electric mobility solutions",
+      color: "text-success"
+    },
+    {
+      icon: Zap,
+      value: "95",
+      unit: "%",
+      label: "Energy Efficiency",
+      description: "Compared to traditional vehicles",
+      color: "text-warning"
+    },
+    {
+      icon: Recycle,
+      value: "100",
+      unit: "%",
+      label: "Battery Recyclability",
+      description: "Full circular economy implementation",
+      color: "text-primary"
+    },
+    {
+      icon: Target,
+      value: "3",
+      unit: "SDGs",
+      label: "UN Goals Aligned",
+      description: "Contributing to global sustainability",
+      color: "text-success"
+    }
+  ];
+
+  const sdgData = [
+    {
+      number: "7",
+      title: "Affordable and Clean Energy",
+      description: "By developing energy-efficient battery technologies and promoting clean energy solutions for mobility.",
+      icon: Zap,
+      initiatives: [
+        "Advanced lithium-ion battery development",
+        "Solar charging station integration",
+        "Energy storage optimization"
+      ]
+    },
+    {
+      number: "9",
+      title: "Industry, Innovation, and Infrastructure",
+      description: "Through continuous innovation in micro-mobility and energy storage, enhancing sustainable infrastructure.",
+      icon: Building,
+      initiatives: [
+        "R&D in micro-mobility solutions",
+        "Smart charging infrastructure",
+        "Technology transfer programs"
+      ]
+    },
+    {
+      number: "11",
+      title: "Sustainable Cities and Communities",
+      description: "By creating eco-friendly transportation solutions that reduce urban congestion and carbon emissions.",
+      icon: Users,
+      initiatives: [
+        "Urban patrol vehicle deployment",
+        "Campus mobility solutions",
+        "Community engagement programs"
+      ]
+    }
+  ];
+
+  return (
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20" style={{
-      backgroundImage: `url(${sustainabilityHero})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundAttachment: 'fixed'
-    }}>
+      <section 
+        className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
+        style={{
+          backgroundImage: `url(${sustainabilityHero})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
+        }}
+      >
         <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-success/60 to-primary/80"></div>
         
         <div className="relative z-10 text-center text-primary-foreground px-6 max-w-4xl mx-auto">
           <h1 className="heading-1 mb-8">
             Moving Forward for a
             <br />
-            <span className="text-emerald-400">Greener Tomorrow</span>
+            <span className="text-success">Greener Tomorrow</span>
           </h1>
           <p className="body-large mb-12 opacity-90 leading-relaxed">
             Our company is committed to advancing sustainable development by aligning with the United Nations 
@@ -143,7 +180,11 @@ const Sustainability = () => {
           </div>
 
           <div id="impact-metrics" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-            {impactMetrics.map((metric, index) => <div key={metric.label} className="text-center p-8 bg-card rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 hover-scale">
+            {impactMetrics.map((metric, index) => (
+              <div 
+                key={metric.label}
+                className="text-center p-8 bg-card rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 hover-scale"
+              >
                 <div className="flex justify-center mb-4">
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
                     <metric.icon className={`w-8 h-8 ${metric.color}`} />
@@ -156,7 +197,8 @@ const Sustainability = () => {
                 </div>
                 <div className="body-regular text-foreground font-medium mb-2">{metric.label}</div>
                 <div className="body-small text-muted-foreground">{metric.description}</div>
-              </div>)}
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -172,7 +214,10 @@ const Sustainability = () => {
           </div>
 
           <div className="space-y-16">
-            {sdgData.map((sdg, index) => <div key={sdg.number} className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:direction-reverse' : ''}`}>
+            {sdgData.map((sdg, index) => (
+              <div key={sdg.number} className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
+                index % 2 === 1 ? 'lg:direction-reverse' : ''
+              }`}>
                 <div className={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
                   <div className="flex items-center space-x-4 mb-6">
                     <div className="w-16 h-16 bg-success/20 text-success rounded-full flex items-center justify-center font-bold text-2xl">
@@ -190,10 +235,12 @@ const Sustainability = () => {
                   <div>
                     <h4 className="heading-4 mb-4 text-foreground">Our Initiatives</h4>
                     <ul className="space-y-3">
-                      {sdg.initiatives.map((initiative, idx) => <li key={idx} className="flex items-start space-x-3">
+                      {sdg.initiatives.map((initiative, idx) => (
+                        <li key={idx} className="flex items-start space-x-3">
                           <div className="w-2 h-2 bg-success rounded-full mt-2 flex-shrink-0"></div>
                           <span className="body-regular text-muted-foreground">{initiative}</span>
-                        </li>)}
+                        </li>
+                      ))}
                     </ul>
                   </div>
                 </div>
@@ -207,7 +254,8 @@ const Sustainability = () => {
                     <div className="body-large text-foreground font-medium">{sdg.title}</div>
                   </div>
                 </div>
-              </div>)}
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -282,19 +330,24 @@ const Sustainability = () => {
 
           <div className="max-w-4xl mx-auto">
             <div className="space-y-8">
-              {[{
-              year: "2025",
-              title: "Carbon Neutral Operations",
-              description: "Achieve carbon neutrality in all manufacturing and operational processes."
-            }, {
-              year: "2027",
-              title: "Zero Waste Manufacturing",
-              description: "Implement zero waste production with 100% material recycling and reuse."
-            }, {
-              year: "2030",
-              title: "1 Million Tons CO₂ Saved",
-              description: "Cumulative carbon emissions reduction through our mobility solutions."
-            }].map((goal, index) => <div key={goal.year} className="flex items-start space-x-6 p-6 bg-card rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300">
+              {[
+                {
+                  year: "2025",
+                  title: "Carbon Neutral Operations",
+                  description: "Achieve carbon neutrality in all manufacturing and operational processes."
+                },
+                {
+                  year: "2027",
+                  title: "Zero Waste Manufacturing",
+                  description: "Implement zero waste production with 100% material recycling and reuse."
+                },
+                {
+                  year: "2030",
+                  title: "1 Million Tons CO₂ Saved",
+                  description: "Cumulative carbon emissions reduction through our mobility solutions."
+                }
+              ].map((goal, index) => (
+                <div key={goal.year} className="flex items-start space-x-6 p-6 bg-card rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300">
                   <div className="flex-shrink-0">
                     <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold text-xl">
                       {goal.year}
@@ -304,7 +357,8 @@ const Sustainability = () => {
                     <h3 className="heading-4 mb-3 text-foreground">{goal.title}</h3>
                     <p className="body-regular text-muted-foreground">{goal.description}</p>
                   </div>
-                </div>)}
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -333,6 +387,8 @@ const Sustainability = () => {
           </div>
         </div>
       </section>
-    </div>;
+    </div>
+  );
 };
+
 export default Sustainability;
