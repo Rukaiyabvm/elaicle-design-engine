@@ -133,7 +133,7 @@ const Sustainability = () => {
       </section>
 
       {/* Impact Metrics */}
-      <section id="impact" className="section-spacing bg-muted/30">
+      <section id="impact" className="section-spacing bg-slate-200">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="heading-2 mb-8">Our Impact</h2>
