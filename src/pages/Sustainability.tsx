@@ -133,7 +133,7 @@ const Sustainability = () => {
       </section>
 
       {/* Impact Metrics */}
-      <section id="impact" className="section-spacing bg-slate-200">
+      <section id="impact" className="section-spacing bg-muted/30">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="heading-2 mb-8">Our Impact</h2>
@@ -271,44 +271,7 @@ const Sustainability = () => {
       </section>
 
       {/* Future Goals */}
-      <section className="section-spacing bg-background">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="heading-2 mb-8">Our Sustainability Roadmap</h2>
-            <p className="body-large text-muted-foreground">
-              Ambitious targets for a sustainable future
-            </p>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <div className="space-y-8">
-              {[{
-              year: "2025",
-              title: "Carbon Neutral Operations",
-              description: "Achieve carbon neutrality in all manufacturing and operational processes."
-            }, {
-              year: "2027",
-              title: "Zero Waste Manufacturing",
-              description: "Implement zero waste production with 100% material recycling and reuse."
-            }, {
-              year: "2030",
-              title: "1 Million Tons CO₂ Saved",
-              description: "Cumulative carbon emissions reduction through our mobility solutions."
-            }].map((goal, index) => <div key={goal.year} className="flex items-start space-x-6 p-6 bg-card rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300">
-                  <div className="flex-shrink-0">
-                    <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold text-xl">
-                      {goal.year}
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="heading-4 mb-3 text-foreground">{goal.title}</h3>
-                    <p className="body-regular text-muted-foreground">{goal.description}</p>
-                  </div>
-                </div>)}
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* CTA */}
       <section className="section-spacing bg-primary">
