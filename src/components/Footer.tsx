@@ -1,46 +1,80 @@
 import { Link } from "react-router-dom";
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-
   const footerLinks = {
-    About: [
-      { name: "Our Story", href: "/about" },
-      { name: "Team", href: "/about#team" },
-      { name: "Mission & Vision", href: "/about#mission" },
-      { name: "Careers", href: "/careers" },
-    ],
-    Products: [
-      { name: "Trike 2π", href: "/products" },
-      { name: "Features", href: "/products#features" },
-      { name: "Specifications", href: "/products#specs" },
-      { name: "Pricing", href: "/products#pricing" },
-    ],
-    Sustainability: [
-      { name: "Our Impact", href: "/sustainability" },
-      { name: "SDG Goals", href: "/sustainability#sdg" },
-      { name: "Battery Program", href: "/sustainability#battery" },
-      { name: "Green Initiatives", href: "/sustainability#initiatives" },
-    ],
-    Contact: [
-      { name: "Get in Touch", href: "/contact" },
-      { name: "Support", href: "/support" },
-      { name: "Partnerships", href: "/partnerships" },
-      { name: "Media Kit", href: "/media" },
-    ],
+    About: [{
+      name: "Our Story",
+      href: "/about"
+    }, {
+      name: "Team",
+      href: "/about#team"
+    }, {
+      name: "Mission & Vision",
+      href: "/about#mission"
+    }, {
+      name: "Careers",
+      href: "/careers"
+    }],
+    Products: [{
+      name: "Trike 2π",
+      href: "/products"
+    }, {
+      name: "Features",
+      href: "/products#features"
+    }, {
+      name: "Specifications",
+      href: "/products#specs"
+    }, {
+      name: "Pricing",
+      href: "/products#pricing"
+    }],
+    Sustainability: [{
+      name: "Our Impact",
+      href: "/sustainability"
+    }, {
+      name: "SDG Goals",
+      href: "/sustainability#sdg"
+    }, {
+      name: "Battery Program",
+      href: "/sustainability#battery"
+    }, {
+      name: "Green Initiatives",
+      href: "/sustainability#initiatives"
+    }],
+    Contact: [{
+      name: "Get in Touch",
+      href: "/contact"
+    }, {
+      name: "Support",
+      href: "/support"
+    }, {
+      name: "Partnerships",
+      href: "/partnerships"
+    }, {
+      name: "Media Kit",
+      href: "/media"
+    }]
   };
-
-  const socialLinks = [
-    { name: "Facebook", icon: Facebook, href: "#" },
-    { name: "Twitter", icon: Twitter, href: "#" },
-    { name: "LinkedIn", icon: Linkedin, href: "#" },
-    { name: "Instagram", icon: Instagram, href: "#" },
-  ];
-
-  return (
-    <footer className="bg-background-dark text-primary-foreground">
+  const socialLinks = [{
+    name: "Facebook",
+    icon: Facebook,
+    href: "#"
+  }, {
+    name: "Twitter",
+    icon: Twitter,
+    href: "#"
+  }, {
+    name: "LinkedIn",
+    icon: Linkedin,
+    href: "#"
+  }, {
+    name: "Instagram",
+    icon: Instagram,
+    href: "#"
+  }];
+  return <footer className="bg-background-dark text-primary-foreground">
       {/* CTA Banner */}
       <div className="bg-gradient-hero py-16">
         <div className="container mx-auto px-6 text-center">
@@ -62,9 +96,9 @@ const Footer = () => {
             <div className="lg:col-span-1">
               <div className="flex items-center space-x-2 mb-6">
                 <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                  <span className="text-primary-foreground font-bold text-xl">E</span>
+                  <span className="text-primary-foreground font-bold text-xl">e</span>
                 </div>
-                <span className="font-secondary text-2xl font-bold">ELAICLE</span>
+                <span className="font-secondary text-2xl font-bold">eLAICLE</span>
               </div>
               <p className="body-regular mb-6 opacity-80">
                 Rewriting conventions, one trike at a time. Leading the transformation of urban mobility through sustainable innovation.
@@ -88,23 +122,16 @@ const Footer = () => {
             </div>
 
             {/* Footer Links */}
-            {Object.entries(footerLinks).map(([category, links]) => (
-              <div key={category}>
+            {Object.entries(footerLinks).map(([category, links]) => <div key={category}>
                 <h3 className="heading-4 mb-4">{category}</h3>
                 <ul className="space-y-3">
-                  {links.map((link) => (
-                    <li key={link.name}>
-                      <Link
-                        to={link.href}
-                        className="body-regular opacity-80 hover:opacity-100 hover:text-accent transition-all duration-200"
-                      >
+                  {links.map(link => <li key={link.name}>
+                      <Link to={link.href} className="body-regular opacity-80 hover:opacity-100 hover:text-accent transition-all duration-200">
                         {link.name}
                       </Link>
-                    </li>
-                  ))}
+                    </li>)}
                 </ul>
-              </div>
-            ))}
+              </div>)}
           </div>
 
           {/* Social Links & Newsletter */}
@@ -113,16 +140,9 @@ const Footer = () => {
               <div className="flex items-center space-x-6">
                 <span className="body-regular font-medium">Follow Us:</span>
                 <div className="flex space-x-4">
-                  {socialLinks.map((social) => (
-                    <a
-                      key={social.name}
-                      href={social.href}
-                      className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors duration-200"
-                      aria-label={social.name}
-                    >
+                  {socialLinks.map(social => <a key={social.name} href={social.href} className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors duration-200" aria-label={social.name}>
                       <social.icon className="w-4 h-4" />
-                    </a>
-                  ))}
+                    </a>)}
                 </div>
               </div>
               
@@ -143,8 +163,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
