@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Play } from "lucide-react";
-const realTrikeImage = "/lovable-uploads/2b4978cc-58d0-4d32-a48b-31287b49f662.png";
+const heroImage = "/lovable-uploads/324217eb-769d-4dfa-9923-943917241f1f.png";
 
 const Hero = () => {
   return (
@@ -9,12 +9,12 @@ const Hero = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src={realTrikeImage}
+          src={heroImage}
           alt="Elaicle Trike 2π Electric Vehicle"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0" style={{
-          background: 'linear-gradient(135deg, hsl(211 100% 17.1% / 0.8) 0%, transparent 100%)'
+          background: 'linear-gradient(135deg, hsl(211 100% 17.1% / 0.85) 0%, hsl(211 100% 17.1% / 0.3) 50%, transparent 100%)'
         }}></div>
       </div>
 

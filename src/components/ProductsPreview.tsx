@@ -1,7 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Battery, Gauge, Users } from "lucide-react";
-const realTrikeImage = "/lovable-uploads/2b4978cc-58d0-4d32-a48b-31287b49f662.png";
+const trikeImages = {
+  detail: "/lovable-uploads/8cef69c7-c5f5-4e85-8c05-05a7275978cc.png",
+  dashboard: "/lovable-uploads/db87f760-17de-431c-893e-518b4e9c379d.png",
+  outdoor: "/lovable-uploads/350f3d73-c0a5-4e81-b799-a7744a1b4cde.png",
+  building: "/lovable-uploads/55983431-0851-423d-ae41-574d661ebdce.png"
+};
 const ProductsPreview = () => {
   const features = [{
     icon: Battery,
@@ -43,22 +48,22 @@ const ProductsPreview = () => {
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
                 <div className="aspect-square rounded-2xl overflow-hidden shadow-image hover-scale relative">
-                  <img src={realTrikeImage} alt="Trike 2π Detail View" className="w-full h-full object-cover" />
+                  <img src={trikeImages.detail} alt="Trike 2π Detail View" className="w-full h-full object-cover" />
                   <div className="absolute inset-0" style={{
-                    background: 'linear-gradient(135deg, hsl(211 100% 17.1% / 0.3) 0%, transparent 70%)'
+                    background: 'linear-gradient(135deg, hsl(211 100% 17.1% / 0.2) 0%, transparent 70%)'
                   }}></div>
                 </div>
                 <div className="aspect-video rounded-2xl overflow-hidden shadow-image hover-scale relative">
-                  <img src={realTrikeImage} alt="Trike 2π Dashboard" className="w-full h-full object-cover" />
+                  <img src={trikeImages.dashboard} alt="Trike 2π Dashboard Display" className="w-full h-full object-cover" />
                   <div className="absolute inset-0" style={{
-                    background: 'linear-gradient(135deg, hsl(211 100% 17.1% / 0.2) 0%, transparent 60%)'
+                    background: 'linear-gradient(135deg, hsl(211 100% 17.1% / 0.15) 0%, transparent 60%)'
                   }}></div>
                 </div>
               </div>
               <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-image hover-scale relative">
-                <img src={realTrikeImage} alt="Trike 2π Full View" className="w-full h-full object-cover" />
+                <img src={trikeImages.outdoor} alt="Trike 2π Outdoor View" className="w-full h-full object-cover" />
                 <div className="absolute inset-0" style={{
-                  background: 'linear-gradient(135deg, hsl(211 100% 17.1% / 0.4) 0%, transparent 80%)'
+                  background: 'linear-gradient(135deg, hsl(211 100% 17.1% / 0.25) 0%, transparent 80%)'
                 }}></div>
               </div>
             </div>
