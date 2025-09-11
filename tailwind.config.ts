@@ -68,10 +68,7 @@ export default {
 			boxShadow: {
 				'card': 'var(--shadow-card)',
 				'card-hover': 'var(--shadow-card-hover)',
-				'card-lift': 'var(--shadow-card-lift)',
 				'image': 'var(--shadow-image)',
-				'button-hover': 'var(--shadow-button-hover)',
-				'glow': 'var(--shadow-glow)',
 			},
 			spacing: {
 				'section-mobile': 'var(--section-spacing-mobile)',
@@ -89,48 +86,25 @@ export default {
 			},
 			keyframes: {
 				'accordion-down': {
-					from: { height: '0' },
-					to: { height: 'var(--radix-accordion-content-height)' }
+					from: {
+						height: '0'
+					},
+					to: {
+						height: 'var(--radix-accordion-content-height)'
+					}
 				},
 				'accordion-up': {
-					from: { height: 'var(--radix-accordion-content-height)' },
-					to: { height: '0' }
-				},
-				'fade-in-up': {
-					'0%': { opacity: '0', transform: 'translateY(32px)' },
-					'100%': { opacity: '1', transform: 'translateY(0)' }
-				},
-				'fade-slide': {
-					'0%': { opacity: '0', transform: 'translateY(20px)' },
-					'100%': { opacity: '1', transform: 'translateY(0)' }
-				},
-				'mask-slide': {
-					'0%': { transform: 'translateX(100%)' },
-					'100%': { transform: 'translateX(0%)' }
-				},
-				'gradient-shift': {
-					'0%': { backgroundPosition: '0% 50%' },
-					'50%': { backgroundPosition: '100% 50%' },
-					'100%': { backgroundPosition: '0% 50%' }
-				},
-				'float': {
-					'0%, 100%': { transform: 'translateY(0px)' },
-					'50%': { transform: 'translateY(-10px)' }
-				},
-				'pulse-glow': {
-					'0%, 100%': { boxShadow: '0 0 20px rgba(0, 48, 87, 0.3)' },
-					'50%': { boxShadow: '0 0 30px rgba(0, 48, 87, 0.6)' }
+					from: {
+						height: 'var(--radix-accordion-content-height)'
+					},
+					to: {
+						height: '0'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out',
-				'fade-in-up': 'fade-in-up 1s cubic-bezier(0.4, 0, 0.2, 1)',
-				'fade-slide': 'fade-slide 0.8s ease-in-out',
-				'mask-slide': 'mask-slide 1s ease-out',
-				'gradient-shift': 'gradient-shift 8s ease infinite',
-				'float': 'float 3s ease-in-out infinite',
-				'pulse-glow': 'pulse-glow 2s ease-in-out infinite'
+				'accordion-up': 'accordion-up 0.2s ease-out'
 			}
 		}
 	},
