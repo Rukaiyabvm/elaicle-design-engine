@@ -2,14 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Elaicle Design System - Enhanced Brand Identity */
 
 @layer base {
   :root {
-    /* Elaicle Design System - Lucid Inspired */
-    --background: 0 0% 97.6%; /* #F9F9F9 */
+    /* Brand Colors - HSL Format */
+    --background: 220 14% 97%; /* #F8F9FA */
     --foreground: 0 0% 6.7%; /* #111111 */
 
     --card: 0 0% 100%;
@@ -21,21 +19,22 @@ All colors MUST be HSL.
     --primary: 211 100% 17.1%; /* #003057 */
     --primary-foreground: 0 0% 100%;
     --primary-hover: 211 100% 13.3%; /* #002244 */
+    
+    --secondary: 211 79% 11.8%; /* #0A1E2E */
+    --secondary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 100%;
-    --secondary-foreground: 211 100% 17.1%;
+    --accent: 206 96% 62%; /* #3DA9FC */
+    --accent-foreground: 0 0% 100%;
+    --accent-hover: 203 89% 53%; /* #0077B6 */
 
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 33.3%; /* #555555 */
+    --muted: 220 14% 96%;
+    --muted-foreground: 212 15% 39%; /* #4F5B66 */
 
-    --accent: 0 0% 75.3%; /* #C0C0C0 */
-    --accent-foreground: 0 0% 6.7%;
-
-    --destructive: 348 85% 57%; /* #E74C3C */
+    --destructive: 348 85% 57%;
     --destructive-foreground: 0 0% 100%;
 
-    --success: 168 74% 36%; /* #00B894 */
-    --warning: 37 90% 51%; /* #F39C12 */
+    --success: 168 74% 36%;
+    --warning: 37 90% 51%;
 
     --border: 0 0% 75.3%;
     --input: 0 0% 75.3%;
@@ -43,28 +42,36 @@ All colors MUST be HSL.
 
     --radius: 0.75rem;
 
-    /* Custom Design Tokens */
-    --background-dark: 0 0% 6.7%; /* #111111 */
+    /* Enhanced Brand Tokens */
+    --background-dark: 211 79% 11.8%; /* #0A1E2E */
     --text-on-primary: 0 0% 100%;
-    --text-on-dark: 0 0% 100%;
+    --text-on-accent: 0 0% 100%;
     
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(211 100% 17.1%), hsl(0 0% 6.7%));
-    --gradient-overlay: linear-gradient(180deg, hsla(211 100% 17.1% / 0.8), hsla(0 0% 0% / 0.2));
+    /* Enhanced Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(211 100% 17.1%) 0%, hsl(206 96% 62%) 100%);
+    --gradient-blue-green: linear-gradient(135deg, hsl(206 96% 62%) 0%, hsl(168 74% 36%) 100%);
+    --gradient-overlay: linear-gradient(180deg, hsla(211 100% 17.1% / 0.9), hsla(211 79% 11.8% / 0.3));
+    --gradient-motion: linear-gradient(45deg, hsl(206 96% 62%), hsl(211 100% 17.1%), hsl(206 96% 62%));
     
-    /* Shadows */
-    --shadow-card: 0px 4px 12px rgba(0,0,0,0.1);
-    --shadow-card-hover: 0px 6px 20px rgba(0,0,0,0.15);
-    --shadow-image: 0px 8px 24px rgba(0,0,0,0.2);
+    /* Enhanced Shadows */
+    --shadow-card: 0px 4px 12px rgba(0,48,87,0.08);
+    --shadow-card-hover: 0px 8px 32px rgba(0,48,87,0.16);
+    --shadow-button: 0px 4px 20px rgba(61,169,252,0.3);
+    --shadow-image: 0px 12px 40px rgba(0,0,0,0.15);
+    --shadow-glow: 0px 0px 40px rgba(61,169,252,0.2);
     
-    /* Section Spacing */
-    --section-spacing-desktop: 120px;
-    --section-spacing-tablet: 80px;
-    --section-spacing-mobile: 60px;
+    /* Dynamic Spacing System */
+    --container-width: 1200px;
+    --section-padding: clamp(3rem, 8vw, 6rem);
+    --element-gap: 2rem;
     
-    /* Animations */
+    /* Enhanced Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     --transition-slide: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+    --duration-fast: 0.3s;
+    --duration-normal: 0.6s;
+    --duration-slow: 1.2s;
   }
 
   .dark {
@@ -90,51 +97,149 @@ All colors MUST be HSL.
     @apply bg-background text-foreground font-primary;
   }
   
-  /* Typography System */
+  /* Enhanced Typography System */
+  .heading-hero {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    @apply text-foreground;
+  }
+  
   .heading-1 {
-    @apply text-4xl md:text-5xl lg:text-6xl font-light leading-tight tracking-tight;
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    @apply text-foreground;
   }
   
   .heading-2 {
-    @apply text-3xl md:text-4xl lg:text-5xl font-light leading-tight tracking-tight;
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    @apply text-foreground;
   }
   
   .heading-3 {
-    @apply text-xl md:text-2xl lg:text-3xl font-normal leading-tight;
-  }
-  
-  .heading-4 {
-    @apply text-lg md:text-xl lg:text-2xl font-normal leading-tight;
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 600;
+    line-height: 1.4;
+    @apply text-foreground;
   }
   
   .body-large {
-    @apply text-lg md:text-xl font-light leading-relaxed;
+    font-family: 'Satoshi', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.6;
+    @apply text-muted-foreground;
   }
   
   .body-regular {
-    @apply text-base font-light leading-relaxed;
+    font-family: 'Satoshi', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+    @apply text-muted-foreground;
   }
   
-  .body-small {
-    @apply text-sm font-normal leading-relaxed;
+  .caption {
+    font-family: 'Satoshi', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.5;
+    @apply text-muted-foreground;
   }
   
-  /* Section Spacing */
+  /* Enhanced Layout System */
+  .container-custom {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
   .section-spacing {
-    @apply py-16 md:py-20 lg:py-32;
+    padding: var(--section-padding) 0;
   }
   
-  /* Animations */
-  .fade-in {
-    @apply opacity-0 translate-y-6 transition-all duration-700 ease-out;
+  .element-gap {
+    gap: var(--element-gap);
   }
   
-  .fade-in.visible {
-    @apply opacity-100 translate-y-0;
+  /* Enhanced Animation System */
+  .fade-slide-up {
+    opacity: 0;
+    transform: translateY(2rem);
+    transition: all var(--duration-normal) cubic-bezier(0.4, 0, 0.2, 1);
   }
   
-  .hover-scale {
-    @apply transition-transform duration-300 ease-out hover:scale-105;
+  .fade-slide-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .stagger-children > * {
+    animation-delay: calc(var(--stagger-delay, 0) * 0.15s);
+  }
+  
+  .hover-scale-shadow {
+    transition: all var(--duration-fast) ease;
+  }
+  
+  .hover-scale-shadow:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-button);
+  }
+  
+  .hover-lift {
+    transition: all var(--duration-fast) ease;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card-hover);
+  }
+  
+  .underline-expand {
+    position: relative;
+  }
+  
+  .underline-expand::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: hsl(var(--accent));
+    transform-origin: bottom right;
+    transition: transform var(--duration-fast) ease-out;
+  }
+  
+  .underline-expand:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  
+  /* Navigation Styles */
+  .nav-transparent {
+    background-color: transparent;
+    backdrop-filter: none;
+    transition: all var(--duration-fast) ease;
+  }
+  
+  .nav-solid {
+    background-color: hsl(var(--background) / 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid hsl(var(--border));
+    box-shadow: var(--shadow-card);
   }
   
   /* Focus Styles */
