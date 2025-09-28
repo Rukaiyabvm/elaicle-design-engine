@@ -1,137 +1,136 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Battery, Clock, Users, Gauge, Shield, Recycle } from "lucide-react";
-
+import { ArrowRight, Battery, Gauge, Users } from "lucide-react";
 const trikeImages = {
-  detail: '/lovable-uploads/8cef69c7-c5f5-4e85-8c05-05a7275978cc.png',
-  dashboard: '/lovable-uploads/db87f760-17de-431c-893e-518b4e9c379d.png',
-  outdoor: '/lovable-uploads/350f3d73-c0a5-4e81-b799-a7744a1b4cde.png',
-  building: '/lovable-uploads/55983431-0851-423d-ae41-574d661ebdce.png',
+  detail: "/lovable-uploads/8cef69c7-c5f5-4e85-8c05-05a7275978cc.png",
+  dashboard: "/lovable-uploads/db87f760-17de-431c-893e-518b4e9c379d.png",
+  outdoor: "/lovable-uploads/350f3d73-c0a5-4e81-b799-a7744a1b4cde.png",
+  building: "/lovable-uploads/55983431-0851-423d-ae41-574d661ebdce.png"
 };
-
 const ProductsPreview = () => {
-  return (
-    <section className="section-spacing bg-background">
-      <div className="container-custom">
+  const features = [{
+    icon: Battery,
+    title: "Long Range",
+    value: "25-30km",
+    description: "Extended range with swappable battery technology"
+  }, {
+    icon: Gauge,
+    title: "Fast Charging",
+    value: "150min",
+    description: "Quick charge for uninterrupted mobility"
+  }, {
+    icon: Users,
+    title: "Universal Design",
+    value: "All Ages",
+    description: "Designed for users of all age groups"
+  }];
+  return <section className="section-spacing bg-zinc-200">
+      <div className="container mx-auto px-6">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 fade-slide-up">
-          <h2 className="heading-1 mb-6">The Trike 2π</h2>
-          <p className="body-large text-muted-foreground">
-            Compact three-wheeled electric patrol trike designed for campuses, 
-            industrial spaces, and urban micro-mobility needs.
+        <div className="text-center mb-16 fade-in">
+          <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full body-small font-medium mb-6">
+            OUR PRODUCTS
+          </div>
+          <h2 className="heading-2 mb-8">
+            Meet the 
+            <span className="text-primary"> Trike 2π</span>
+          </h2>
+          <p className="body-large text-muted-foreground max-w-3xl mx-auto">
+            Innovative Electric Patrol Trike for Efficient Mobility. Built for efficiency, 
+            stability, and ease of use, enhancing mobility needs and security patrolling.
           </p>
         </div>
 
         {/* Product Showcase */}
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
           {/* Image Gallery */}
-          <div className="grid grid-cols-2 gap-4 fade-slide-up" style={{ animationDelay: '0.2s' }}>
-            <div className="space-y-4">
-              <img 
-                src={trikeImages.detail}
-                alt="Trike 2π Detail View"
-                className="w-full h-48 object-cover rounded-lg shadow-image hover-lift"
-              />
-              <img 
-                src={trikeImages.dashboard}
-                alt="Trike 2π Dashboard"
-                className="w-full h-32 object-cover rounded-lg shadow-image hover-lift"
-              />
-            </div>
-            <div className="space-y-4 mt-8">
-              <img 
-                src={trikeImages.outdoor}
-                alt="Trike 2π Outdoor"
-                className="w-full h-32 object-cover rounded-lg shadow-image hover-lift"
-              />
-              <img 
-                src={trikeImages.building}
-                alt="Trike 2π at Building"
-                className="w-full h-48 object-cover rounded-lg shadow-image hover-lift"
-              />
+          <div className="fade-in">
+            <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-4">
+                <div className="aspect-square rounded-2xl overflow-hidden shadow-image hover-scale relative">
+                  <img src={trikeImages.detail} alt="Trike 2π Detail View" className="w-full h-full object-cover" />
+                  <div className="absolute inset-0" style={{
+                    background: 'linear-gradient(135deg, hsl(211 100% 17.1% / 0.2) 0%, transparent 70%)'
+                  }}></div>
+                </div>
+                <div className="aspect-video rounded-2xl overflow-hidden shadow-image hover-scale relative">
+                  <img src={trikeImages.dashboard} alt="Trike 2π Dashboard Display" className="w-full h-full object-cover" />
+                  <div className="absolute inset-0" style={{
+                    background: 'linear-gradient(135deg, hsl(211 100% 17.1% / 0.15) 0%, transparent 60%)'
+                  }}></div>
+                </div>
+              </div>
+              <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-image hover-scale relative">
+                <img src={trikeImages.outdoor} alt="Trike 2π Outdoor View" className="w-full h-full object-cover" />
+                <div className="absolute inset-0" style={{
+                  background: 'linear-gradient(135deg, hsl(211 100% 17.1% / 0.25) 0%, transparent 80%)'
+                }}></div>
+              </div>
             </div>
           </div>
 
           {/* Features */}
-          <div className="space-y-8 fade-slide-up" style={{ animationDelay: '0.4s' }}>
-            <div className="space-y-6">
-              <div className="flex items-start space-x-4 hover-lift p-4 rounded-lg bg-card">
-                <Battery className="w-6 h-6 text-accent mt-1 animate-bounce-subtle" />
-                <div>
-                  <h3 className="heading-3 mb-2">Long Range</h3>
-                  <p className="body-regular text-muted-foreground">
-                    Up to 25-30 km range per charge with swappable battery technology
-                  </p>
-                </div>
-              </div>
-              
-              <div className="flex items-start space-x-4 hover-lift p-4 rounded-lg bg-card" style={{ animationDelay: '0.1s' }}>
-                <Clock className="w-6 h-6 text-accent mt-1 animate-bounce-subtle" />
-                <div>
-                  <h3 className="heading-3 mb-2">Fast Charging</h3>
-                  <p className="body-regular text-muted-foreground">
-                    Quick 150-minute charging time for minimal downtime
-                  </p>
-                </div>
-              </div>
-              
-              <div className="flex items-start space-x-4 hover-lift p-4 rounded-lg bg-card" style={{ animationDelay: '0.2s' }}>
-                <Users className="w-6 h-6 text-accent mt-1 animate-bounce-subtle" />
-                <div>
-                  <h3 className="heading-3 mb-2">Universal Design</h3>
-                  <p className="body-regular text-muted-foreground">
-                    Ergonomic design suitable for security patrols and campus mobility
-                  </p>
-                </div>
-              </div>
+          <div className="fade-in">
+            <h3 className="heading-3 mb-8">Key Features</h3>
+            <div className="space-y-6 mb-8">
+              {features.map((feature, index) => <div key={feature.title} className="flex items-start space-x-4">
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                      <feature.icon className="w-6 h-6 text-primary" />
+                    </div>
+                  </div>
+                  <div>
+                    <div className="flex items-baseline space-x-3 mb-2">
+                      <h4 className="heading-4 text-foreground">{feature.title}</h4>
+                      <span className="body-large font-medium text-primary">{feature.value}</span>
+                    </div>
+                    <p className="body-regular text-muted-foreground">{feature.description}</p>
+                  </div>
+                </div>)}
             </div>
 
-            <Button 
-              asChild 
-              size="lg" 
-              className="bg-accent text-accent-foreground hover:bg-accent-hover hover-scale-shadow"
-            >
-              <Link to="/products">Explore Specifications</Link>
-            </Button>
+            <div className="space-y-4">
+              <Button variant="default" size="lg" asChild>
+                <Link to="/products" className="flex items-center w-full sm:w-auto">
+                  Explore Specifications
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </Link>
+              </Button>
+              
+              <div className="flex items-center space-x-4 text-muted-foreground">
+                <span className="body-small">Starting from</span>
+                <span className="heading-4 text-primary">₹2.5L*</span>
+                <span className="body-small">*Price may vary</span>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Pricing Section */}
-        <div className="text-center mb-16 fade-slide-up" style={{ animationDelay: '0.6s' }}>
-          <div className="inline-block bg-gradient-hero text-white px-8 py-4 rounded-full">
-            <span className="body-large font-semibold">Starting from ₹2,50,000</span>
-          </div>
-        </div>
-
-        {/* Specifications Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 fade-slide-up" style={{ animationDelay: '0.8s' }}>
-          <div className="text-center p-6 bg-card rounded-lg hover-lift shadow-card">
-            <Gauge className="w-8 h-8 mx-auto mb-3 text-accent animate-bounce-subtle" />
-            <div className="heading-3 text-foreground">2.5m</div>
-            <div className="caption text-muted-foreground">Turning Radius</div>
-          </div>
-          
-          <div className="text-center p-6 bg-card rounded-lg hover-lift shadow-card" style={{ animationDelay: '0.1s' }}>
-            <Shield className="w-8 h-8 mx-auto mb-3 text-accent animate-bounce-subtle" />
-            <div className="heading-3 text-foreground">99.9%</div>
-            <div className="caption text-muted-foreground">Stability</div>
-          </div>
-          
-          <div className="text-center p-6 bg-card rounded-lg hover-lift shadow-card" style={{ animationDelay: '0.2s' }}>
-            <Users className="w-8 h-8 mx-auto mb-3 text-accent animate-bounce-subtle" />
-            <div className="heading-3 text-foreground">150kg</div>
-            <div className="caption text-muted-foreground">Load Capacity</div>
-          </div>
-          
-          <div className="text-center p-6 bg-card rounded-lg hover-lift shadow-card" style={{ animationDelay: '0.3s' }}>
-            <Recycle className="w-8 h-8 mx-auto mb-3 text-accent animate-bounce-subtle" />
-            <div className="heading-3 text-foreground">3 Years</div>
-            <div className="caption text-muted-foreground">Battery Life</div>
-          </div>
+        {/* Additional Features Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 fade-in">
+          {[{
+          title: "Compact & Maneuverable",
+          value: "5ft",
+          desc: "Turning radius"
+        }, {
+          title: "High Stability",
+          value: "Low",
+          desc: "Tilt during cornering"
+        }, {
+          title: "Max Load Capacity",
+          value: "150kg",
+          desc: "Single occupant"
+        }, {
+          title: "Battery Life",
+          value: "3 Years",
+          desc: "Swappable design"
+        }].map((item, index) => <div key={item.title} className="text-center p-6 bg-card rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300">
+              <div className="heading-3 text-primary mb-2">{item.value}</div>
+              <div className="heading-4 mb-2">{item.title}</div>
+              <div className="body-small text-muted-foreground">{item.desc}</div>
+            </div>)}
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ProductsPreview;

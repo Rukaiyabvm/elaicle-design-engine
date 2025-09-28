@@ -1,79 +1,75 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowDown, Battery, Clock, Weight } from "lucide-react";
+import { ArrowRight, Play } from "lucide-react";
+const heroImage = "/lovable-uploads/324217eb-769d-4dfa-9923-943917241f1f.png";
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Dynamic Background with Gradient Motion */}
-      <div 
-        className="absolute inset-0 bg-gradient-hero bg-[length:400%_400%] animate-gradient-shift"
-      >
-        <div className="absolute inset-0 bg-gradient-overlay"></div>
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src={heroImage}
+          alt="Elaicle Trike 2π Electric Vehicle"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0" style={{
+          background: 'linear-gradient(135deg, hsl(211 100% 17.1% / 0.85) 0%, hsl(211 100% 17.1% / 0.3) 50%, transparent 100%)'
+        }}></div>
       </div>
-      
-      {/* Hero Content */}
-      <div className="container-custom relative z-10 text-center text-white">
-        <div className="max-w-4xl mx-auto space-y-8">
-          {/* Animated Headline */}
-          <h1 className="heading-hero text-white animate-mask-slide">
-            Envisioning Sustainability, One Trike at a Time
+
+      {/* Content */}
+      <div className="relative z-10 text-center text-primary-foreground px-6 max-w-6xl mx-auto">
+        <div className="fade-in">
+          <h1 className="heading-1 mb-8 font-light">
+            Rewriting Conventions,
+            <br />
+            <span className="text-accent">One Trike at a Time</span>
           </h1>
           
-          {/* Animated Subtext */}
-          <p className="body-large text-white/90 max-w-2xl mx-auto fade-slide-up" 
-             style={{ animationDelay: '0.3s' }}>
-            We aim to contribute our part to a sustainable world, even if that is a 0.0000000000001%
+          <p className="body-large mb-12 max-w-3xl mx-auto opacity-90 leading-relaxed">
+            Pioneering sustainable micro-mobility solutions with advanced energy storage technologies. 
+            Experience the future of urban transportation with our electric patrol trike.
           </p>
-          
-          {/* Animated CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center fade-slide-up"
-               style={{ animationDelay: '0.6s' }}>
-            <Button 
-              asChild 
-              size="lg" 
-              className="bg-accent text-accent-foreground hover:bg-accent-hover hover-scale-shadow"
-            >
-              <Link to="/products">Explore Our Trike</Link>
+
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <Button variant="secondary" size="lg" asChild>
+              <Link to="/products" className="flex items-center">
+                Explore Trike 2π
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </Link>
             </Button>
-            <Button 
-              asChild 
-              variant="secondary" 
-              size="lg"
-              className="bg-white/10 text-white border-white/30 hover:bg-white/20 backdrop-blur-sm hover-scale-shadow"
-            >
-              <Link to="/contact">Book a Demo</Link>
+            
+            <Button variant="ghost" size="lg" asChild>
+              <Link to="/contact" className="flex items-center">
+                <Play className="mr-2 w-4 h-4" />
+                Watch Demo
+              </Link>
             </Button>
           </div>
-        </div>
-        
-        {/* Key Metrics */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 max-w-4xl mx-auto fade-slide-up"
-             style={{ animationDelay: '0.9s' }}>
-          <div className="text-center hover-lift p-6 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
-            <Battery className="w-8 h-8 mx-auto mb-3 text-accent animate-bounce-subtle" />
-            <div className="heading-3 text-white font-bold">25-30 km</div>
-            <div className="caption text-white/80">Range per Charge</div>
-          </div>
-          
-          <div className="text-center hover-lift p-6 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20"
-               style={{ animationDelay: '0.15s' }}>
-            <Clock className="w-8 h-8 mx-auto mb-3 text-accent animate-bounce-subtle" />
-            <div className="heading-3 text-white font-bold">150 min</div>
-            <div className="caption text-white/80">Fast Charging</div>
-          </div>
-          
-          <div className="text-center hover-lift p-6 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20"
-               style={{ animationDelay: '0.3s' }}>
-            <Weight className="w-8 h-8 mx-auto mb-3 text-accent animate-bounce-subtle" />
-            <div className="heading-3 text-white font-bold">150 kg</div>
-            <div className="caption text-white/80">Max Load Capacity</div>
+
+          {/* Key Metrics */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 pt-12 border-t border-white/20">
+            <div className="text-center">
+              <div className="heading-3 mb-2">25-30km</div>
+              <div className="body-regular opacity-80">Range per Charge</div>
+            </div>
+            <div className="text-center">
+              <div className="heading-3 mb-2">150min</div>
+              <div className="body-regular opacity-80">Fast Charging</div>
+            </div>
+            <div className="text-center">
+              <div className="heading-3 mb-2">150kg</div>
+              <div className="body-regular opacity-80">Max Load Capacity</div>
+            </div>
           </div>
         </div>
-        
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <ArrowDown className="w-6 h-6 text-white/70" />
+      </div>
+
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+        <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-white/70 rounded-full mt-2 animate-bounce"></div>
         </div>
       </div>
     </section>

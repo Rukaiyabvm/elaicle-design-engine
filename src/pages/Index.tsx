@@ -7,18 +7,10 @@ import { useEffect } from "react";
 
 const Index = () => {
   useEffect(() => {
-    // Enhanced Animation System with Staggered Reveals
+    // Animation trigger for fade-in elements
     const observerCallback = (entries) => {
-      entries.forEach((entry, index) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          // Add stagger delay for child elements
-          const children = entry.target.querySelectorAll('.fade-slide-up, .hover-lift');
-          children.forEach((child, childIndex) => {
-            setTimeout(() => {
-              child.classList.add('visible');
-            }, childIndex * 150); // Staggered animation
-          });
-          
           entry.target.classList.add('visible');
         }
       });
@@ -29,8 +21,8 @@ const Index = () => {
       rootMargin: '50px 0px -50px 0px'
     });
 
-    // Observe all animated elements
-    document.querySelectorAll('.fade-slide-up, .fade-in').forEach((el) => {
+    // Observe all fade-in elements
+    document.querySelectorAll('.fade-in').forEach((el) => {
       observer.observe(el);
     });
 
