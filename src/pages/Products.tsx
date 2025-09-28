@@ -1,9 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Battery, Gauge, Users, Zap, Shield, Wrench } from "lucide-react";
-import trikeHero from "@/assets/trike-hero.jpg";
-import trikeDetail from "@/assets/trike-detail.jpg";
-import trikeDashboard from "@/assets/trike-dashboard.jpg";
+const productImages = {
+  hero: "/lovable-uploads/324217eb-769d-4dfa-9923-943917241f1f.png",
+  detail: "/lovable-uploads/8cef69c7-c5f5-4e85-8c05-05a7275978cc.png",
+  dashboard: "/lovable-uploads/db87f760-17de-431c-893e-518b4e9c379d.png",
+  outdoor: "/lovable-uploads/350f3d73-c0a5-4e81-b799-a7744a1b4cde.png",
+  building: "/lovable-uploads/55983431-0851-423d-ae41-574d661ebdce.png",
+  component: "/lovable-uploads/f0da27a2-a457-40fd-80be-50e4447e3543.png"
+};
 const Products = () => {
   const specifications = [{
     label: "Range",
@@ -33,28 +38,33 @@ const Products = () => {
   const features = [{
     title: "Compact & Maneuverable",
     description: "Turns within 5 feet, perfect for tight spaces and crowded areas. Ideal for campus and urban patrol operations.",
-    image: trikeDetail
+    image: productImages.detail
   }, {
     title: "High Stability Design",
     description: "Reduced tilt during cornering for safer rides. Three-wheel configuration provides superior stability compared to two-wheelers.",
-    image: trikeHero
+    image: productImages.outdoor
   }, {
     title: "Universal Accessibility",
     description: "Designed for users of all age groups with intuitive controls and comfortable ergonomics.",
-    image: trikeDashboard
+    image: productImages.dashboard
   }, {
     title: "Advanced Battery System",
     description: "Swappable battery technology for uninterrupted usage. Includes reverse mode option for enhanced maneuverability.",
-    image: trikeDetail
+    image: productImages.component
   }];
   return <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20" style={{
-      backgroundImage: `url(${trikeHero})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center'
-    }}>
-        <div className="absolute inset-0 bg-gradient-overlay"></div>
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+        <div className="absolute inset-0 z-0">
+          <img
+            src={productImages.hero}
+            alt="Elaicle Trike 2π Electric Vehicle"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0" style={{
+            background: 'linear-gradient(135deg, hsl(211 100% 17.1% / 0.8) 0%, hsl(211 100% 17.1% / 0.3) 60%, transparent 100%)'
+          }}></div>
+        </div>
         
         <div className="relative z-10 text-center text-primary-foreground px-6 max-w-4xl mx-auto">
           <h1 className="heading-1 mb-8">
@@ -94,16 +104,16 @@ const Products = () => {
           {/* Image Gallery */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
             <div className="lg:col-span-2 aspect-video rounded-2xl overflow-hidden shadow-image hover-scale">
-              <img src={trikeHero} alt="Trike 2π Main View" className="w-full h-full object-cover" />
+              <img src={productImages.outdoor} alt="Trike 2π Main View" className="w-full h-full object-cover" />
             </div>
             <div className="aspect-square rounded-2xl overflow-hidden shadow-image hover-scale">
-              <img src={trikeDetail} alt="Trike 2π Detail" className="w-full h-full object-cover" />
+              <img src={productImages.detail} alt="Trike 2π Detail" className="w-full h-full object-cover" />
             </div>
             <div className="aspect-square rounded-2xl overflow-hidden shadow-image hover-scale">
-              <img src={trikeDashboard} alt="Trike 2π Dashboard" className="w-full h-full object-cover" />
+              <img src={productImages.dashboard} alt="Trike 2π Dashboard" className="w-full h-full object-cover" />
             </div>
             <div className="lg:col-span-2 aspect-video rounded-2xl overflow-hidden shadow-image hover-scale">
-              <img src={trikeDetail} alt="Trike 2π Side View" className="w-full h-full object-cover" />
+              <img src={productImages.building} alt="Trike 2π Context View" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>
