@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Lightbulb, Target, Users, Calendar } from "lucide-react";
-const bannerImage = "/lovable-uploads/ce10e403-ca16-4a77-8c5d-a5cbbe756455.png";
+import trikeHero from "@/assets/trike-hero.jpg";
 const About = () => {
   const milestones = [{
     year: "2021",
@@ -34,17 +34,12 @@ const About = () => {
   }];
   return <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden pt-20">
-        <div className="absolute inset-0 z-0">
-          <img
-            src={bannerImage}
-            alt="Elaicle Trike 2π - About Us"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0" style={{
-            background: 'linear-gradient(135deg, hsl(211 100% 17.1% / 0.85) 0%, hsl(211 100% 17.1% / 0.4) 50%, transparent 100%)'
-          }}></div>
-        </div>
+      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-20" style={{
+      backgroundImage: `url(${trikeHero})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center'
+    }}>
+        <div className="absolute inset-0 bg-gradient-overlay bg-transparent"></div>
         
         <div className="relative z-10 text-center text-primary-foreground px-6 max-w-4xl mx-auto">
           <h1 className="heading-1 mb-8">
