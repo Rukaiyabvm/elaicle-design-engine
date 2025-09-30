@@ -15,7 +15,7 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 text-center text-primary-foreground px-6 max-w-6xl mx-auto">
         <div className="fade-in">
-          <h1 className="heading-1 mb-8 font-light my-[40px] mx-[40px]">
+          <h1 className="heading-1 mb-8 font-light mx-0 my-[40px] py-[30px]">
             Rewriting Conventions,
             <br />
             <span className="text-accent">One Trike at a Time</span>
