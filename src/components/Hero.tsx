@@ -21,7 +21,7 @@ const Hero = () => {
             <span className="text-accent">One Trike at a Time</span>
           </h1>
           
-          <p className="body-large mb-12 max-w-3xl mx-auto opacity-90 leading-relaxed">At Elaicle, we envision a world where urban mobility is efficient, sustainable, and effortless. Our electric patrol trikes combine cutting-edge battery technology, intelligent design, and eco-conscious engineering to create a seamless, zero-emission transport solution.</p>
+          
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Button variant="secondary" size="lg" asChild>
