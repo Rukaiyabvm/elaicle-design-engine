@@ -99,7 +99,7 @@ const ProductsPreview = () => {
               
               <div className="flex items-center space-x-4 text-muted-foreground">
                 <span className="body-small">Starting from</span>
-                <span className="heading-4 text-primary">₹2.5L*</span>
+                <span className="heading-4 text-primary">₹0.75L*</span>
                 <span className="body-small">*Price may vary</span>
               </div>
             </div>
