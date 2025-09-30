@@ -56,14 +56,10 @@ const Products = () => {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
-          <img
-            src={productImages.hero}
-            alt="Elaicle Trike 2π Electric Vehicle"
-            className="w-full h-full object-cover"
-          />
+          <img src={productImages.hero} alt="Elaicle Trike 2π Electric Vehicle" className="w-full h-full object-cover" />
           <div className="absolute inset-0" style={{
-            background: 'linear-gradient(135deg, hsl(211 100% 17.1% / 0.8) 0%, hsl(211 100% 17.1% / 0.3) 60%, transparent 100%)'
-          }}></div>
+          background: 'linear-gradient(135deg, hsl(211 100% 17.1% / 0.8) 0%, hsl(211 100% 17.1% / 0.3) 60%, transparent 100%)'
+        }}></div>
         </div>
         
         <div className="relative z-10 text-center text-primary-foreground px-6 max-w-4xl mx-auto">
@@ -117,7 +113,7 @@ const Products = () => {
       </section>
 
       {/* Features */}
-      <section className="section-spacing bg-gray-200">
+      <section className="section-spacing bg-gray-200 mx-0 my-0">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="heading-2 mb-8">Our Features</h2>
