@@ -36,14 +36,10 @@ const About = () => {
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
-          <img
-            src={bannerImage}
-            alt="Elaicle Trike 2π - About Us"
-            className="w-full h-full object-cover"
-          />
+          <img src={bannerImage} alt="Elaicle Trike 2π - About Us" className="w-full h-full object-cover" />
           <div className="absolute inset-0" style={{
-            background: 'linear-gradient(135deg, hsl(211 100% 17.1% / 0.85) 0%, hsl(211 100% 17.1% / 0.4) 50%, transparent 100%)'
-          }}></div>
+          background: 'linear-gradient(135deg, hsl(211 100% 17.1% / 0.85) 0%, hsl(211 100% 17.1% / 0.4) 50%, transparent 100%)'
+        }}></div>
         </div>
         
         <div className="relative z-10 text-center text-primary-foreground px-6 max-w-4xl mx-auto">
@@ -57,7 +53,7 @@ const About = () => {
       </section>
 
       {/* Company Story */}
-      <section className="section-spacing bg-background">
+      <section className="section-spacing bg-background mx-px my-0">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h2 className="heading-2 mb-8">Who We Are</h2>
