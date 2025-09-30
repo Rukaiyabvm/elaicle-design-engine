@@ -28,22 +28,23 @@ const Hero = () => {
           </h1>
           
           <p className="body-large mb-12 max-w-3xl mx-auto opacity-90 leading-relaxed">
-            Pioneering sustainable micro-mobility solutions with advanced energy storage technologies. 
-            Experience the future of urban transportation with our electric patrol trike.
+            At Elaicle, we envision a world where urban mobility is efficient, sustainable, and effortless. 
+            Our electric patrol trikes combine cutting-edge battery technology, intelligent design, and eco-conscious 
+            engineering to create a seamless, zero-emission transport solution.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Button variant="secondary" size="lg" asChild>
               <Link to="/products" className="flex items-center">
-                Explore Trike 2π
+                Discover Trike 2π
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
             </Button>
             
             <Button variant="ghost" size="lg" asChild>
-              <Link to="/contact" className="flex items-center">
-                <Play className="mr-2 w-4 h-4" />
-                Watch Demo
+              <Link to="/about" className="flex items-center">
+                About Elaicle
+                <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
             </Button>
           </div>

@@ -32,24 +32,21 @@ const AboutPreview = () => {
             </div>
             
             <h2 className="heading-2 mb-8">
-              Envisioning Sustainability,
+              Driven by Innovation.
               <br />
-              <span className="text-primary">One Step at a Time</span>
+              <span className="text-primary">Guided by Sustainability.</span>
             </h2>
             
-            <p className="body-large mb-8 text-muted-foreground leading-relaxed">
-              "We aim to contribute our part to a sustainable world, even if that is a 0.0000000000001%"
-            </p>
-            
             <p className="body-regular mb-8 text-muted-foreground leading-relaxed">
-              We, Elaicle are an Electric automotive manufacturing enterprise, specialising in micro-mobility 
-              and pioneering change with a concentration in Energy Storage. Based in Coimbatore, ELAICLE has 
-              been redefining green innovations and the mobility game.
+              Elaicle is a Coimbatore-based micro-mobility startup dedicated to transforming the way people move 
+              in campuses, industrial complexes, and urban environments. Our journey began with a simple idea in 
+              2021—to create a trike that is compact, reliable, and environmentally responsible. Today, we deliver 
+              mobility solutions that merge design excellence with meaningful sustainability.
             </p>
 
             <Button variant="default" size="lg" asChild>
               <Link to="/about" className="flex items-center">
-                Learn Our Story
+                Learn More
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
             </Button>

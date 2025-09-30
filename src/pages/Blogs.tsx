@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Calendar, User, ArrowRight } from "lucide-react";
 
-const News = () => {
+const Blogs = () => {
   const articles = [
     {
       id: 1,
@@ -39,9 +39,9 @@ const News = () => {
       <section className="section-spacing bg-gradient-hero">
         <div className="container mx-auto px-6">
           <div className="text-center text-primary-foreground">
-            <h1 className="heading-1 mb-8">Latest News & Updates</h1>
+            <h1 className="heading-1 mb-8">Blogs & Insights</h1>
             <p className="body-large max-w-2xl mx-auto opacity-90">
-              Stay updated with Elaicle's journey towards sustainable mobility and our latest innovations.
+              Stay informed about our latest innovations, industry insights, and sustainability initiatives
             </p>
           </div>
         </div>
@@ -89,4 +89,4 @@ const News = () => {
   );
 };
 
-export default News;
+export default Blogs;

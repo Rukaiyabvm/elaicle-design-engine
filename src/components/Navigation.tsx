@@ -20,16 +20,16 @@ const Navigation = () => {
     name: "Products",
     href: "/products"
   }, {
-    name: "Sustainability",
-    href: "/sustainability"
+    name: "MaaS",
+    href: "/maas"
   }, {
-    name: "News",
-    href: "/news"
+    name: "Blogs",
+    href: "/blogs"
   }, {
     name: "Contact",
     href: "/contact"
   }];
-  return <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-background/95 backdrop-blur-md shadow-card" : "bg-transparent"}`}>
+  return <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? "bg-background/70 backdrop-blur-xl shadow-lg rounded-b-3xl mx-4 mt-2" : "bg-transparent"}`}>
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}

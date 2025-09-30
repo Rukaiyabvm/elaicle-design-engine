@@ -37,19 +37,19 @@ const Products = () => {
   }];
   const features = [{
     title: "Compact & Maneuverable",
-    description: "Turns within 5 feet, perfect for tight spaces and crowded areas. Ideal for campus and urban patrol operations.",
+    description: "Turns within 5 feet, perfect for tight spaces. Engineered for seamless navigation in crowded campuses and urban environments.",
     image: productImages.detail
   }, {
-    title: "High Stability Design",
-    description: "Reduced tilt during cornering for safer rides. Three-wheel configuration provides superior stability compared to two-wheelers.",
+    title: "High Stability",
+    description: "Reduced tilt during cornering for safer rides. The three-wheel configuration delivers superior stability for all users.",
     image: productImages.outdoor
   }, {
     title: "Universal Accessibility",
-    description: "Designed for users of all age groups with intuitive controls and comfortable ergonomics.",
+    description: "Comfortable and easy to operate for all age groups. Intuitive controls make it accessible to everyone.",
     image: productImages.dashboard
   }, {
-    title: "Advanced Battery System",
-    description: "Swappable battery technology for uninterrupted usage. Includes reverse mode option for enhanced maneuverability.",
+    title: "Swappable Battery",
+    description: "Swappable battery for uninterrupted usage. Includes reverse mode for enhanced maneuverability and convenience.",
     image: productImages.component
   }];
   return <div className="min-h-screen">
@@ -68,14 +68,12 @@ const Products = () => {
         
         <div className="relative z-10 text-center text-primary-foreground px-6 max-w-4xl mx-auto">
           <h1 className="heading-1 mb-8">
-            Trike 2π
+            Trike 2π – The Future of Electric Mobility
           </h1>
-          <p className="body-large mb-8 opacity-90">
-            Innovative Electric Patrol Trike for Efficient Mobility
-          </p>
-          <p className="body-regular mb-12 opacity-80 max-w-2xl mx-auto">
-            Built for efficiency, stability, and ease of use, the Trike 2π enhances mobility needs 
-            and security patrolling, ensuring a smoother and more sustainable transport experience.
+          <p className="body-large mb-12 opacity-90 max-w-3xl mx-auto leading-relaxed">
+            The Trike 2π is a compact three-wheeled electric patrol trike designed for manoeuvrability, stability, 
+            and eco-friendly performance. Ideal for campuses, city patrols, and industrial complexes, it delivers 
+            zero-emission transport with unmatched efficiency.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
@@ -93,11 +91,10 @@ const Products = () => {
       <section className="section-spacing bg-background">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="heading-2 mb-8">Product Overview</h2>
+            <h2 className="heading-2 mb-8">Trike 2π Overview</h2>
             <p className="body-large text-muted-foreground max-w-3xl mx-auto">
-              At Elaicle, we are redefining mobility with sustainable, high-performance electric solutions. 
-              Our Trike 2π is a compact three-wheeled electric vehicle, designed for seamless maneuverability 
-              in large campuses and industrial spaces.
+              The Trike 2π is more than a vehicle—it's a movement toward smarter, cleaner, and more efficient urban mobility. 
+              Built for performance, designed for sustainability, and engineered for reliability.
             </p>
           </div>
 

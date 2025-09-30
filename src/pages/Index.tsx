@@ -1,9 +1,12 @@
 import Hero from "@/components/Hero";
 import AboutPreview from "@/components/AboutPreview";
 import ProductsPreview from "@/components/ProductsPreview";
-import SustainabilityPreview from "@/components/SustainabilityPreview";
+import MaaSPreview from "@/components/MaaSPreview";
 import TestimonialsPreview from "@/components/TestimonialsPreview";
 import { useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 
 const Index = () => {
   useEffect(() => {
@@ -34,8 +37,31 @@ const Index = () => {
       <Hero />
       <AboutPreview />
       <ProductsPreview />
-      <SustainabilityPreview />
-      <TestimonialsPreview />
+      <MaaSPreview />
+      
+      {/* CTA Section */}
+      <section className="section-spacing bg-primary">
+        <div className="container mx-auto px-6">
+          <div className="text-center text-primary-foreground">
+            <h2 className="heading-2 mb-8">Join Us in Shaping a Cleaner, Smarter Tomorrow</h2>
+            <p className="body-large mb-12 max-w-2xl mx-auto opacity-90">
+              From innovation to action, Elaicle is committed to transforming urban mobility and 
+              promoting sustainability in every ride. Be part of the change.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button variant="secondary" size="lg" asChild>
+                <Link to="/contact" className="flex items-center">
+                  Contact Us
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </Link>
+              </Button>
+              <Button variant="ghost" size="lg" asChild>
+                <Link to="/contact">Partner With Us</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

@@ -8,9 +8,10 @@ const Contact = () => {
       <section className="section-spacing bg-gradient-hero">
         <div className="container mx-auto px-6">
           <div className="text-center text-primary-foreground">
-            <h1 className="heading-1 mb-8">Let's Shape the Future Together</h1>
+            <h1 className="heading-1 mb-8">Let's Move Forward Together</h1>
             <p className="body-large max-w-2xl mx-auto opacity-90">
-              Ready to experience sustainable mobility? Get in touch with us for demos, partnerships, or inquiries.
+              Have questions, partnership ideas, or want to bring Trike 2π to your community? Connect with us 
+              and become part of the future of sustainable mobility.
             </p>
           </div>
         </div>
@@ -42,14 +43,10 @@ const Contact = () => {
               <h3 className="heading-3 mb-8">Contact Information</h3>
               <div className="space-y-8">
                 <div className="flex items-start space-x-4">
-                  <MapPin className="w-6 h-6 text-primary mt-1" />
+                  <Mail className="w-6 h-6 text-primary mt-1" />
                   <div>
-                    <h4 className="heading-4 mb-2">Address</h4>
-                    <p className="body-regular text-muted-foreground">
-                      Elaicle Headquarters<br />
-                      Coimbatore, Tamil Nadu<br />
-                      India
-                    </p>
+                    <h4 className="heading-4 mb-2">Email</h4>
+                    <p className="body-regular text-muted-foreground">contact@elaicle.com</p>
                   </div>
                 </div>
                 
@@ -57,28 +54,27 @@ const Contact = () => {
                   <Phone className="w-6 h-6 text-primary mt-1" />
                   <div>
                     <h4 className="heading-4 mb-2">Phone</h4>
-                    <p className="body-regular text-muted-foreground">+91 XXXX XXXXXX</p>
+                    <p className="body-regular text-muted-foreground">+91-XXXXXXXXXX</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start space-x-4">
-                  <Mail className="w-6 h-6 text-primary mt-1" />
+                  <MapPin className="w-6 h-6 text-primary mt-1" />
                   <div>
-                    <h4 className="heading-4 mb-2">Email</h4>
-                    <p className="body-regular text-muted-foreground">info@elaicle.com</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start space-x-4">
-                  <Clock className="w-6 h-6 text-primary mt-1" />
-                  <div>
-                    <h4 className="heading-4 mb-2">Business Hours</h4>
+                    <h4 className="heading-4 mb-2">Address</h4>
                     <p className="body-regular text-muted-foreground">
-                      Monday - Friday: 9:00 AM - 6:00 PM<br />
-                      Saturday: 9:00 AM - 1:00 PM
+                      Coimbatore, Tamil Nadu, India
                     </p>
                   </div>
                 </div>
+              </div>
+
+              <div className="mt-12 p-6 bg-primary/5 rounded-2xl border border-primary/20">
+                <p className="body-regular text-foreground leading-relaxed">
+                  Partner with Elaicle to accelerate the shift toward clean, efficient mobility. Whether you're 
+                  interested in deploying our trikes or exploring manufacturing partnerships through MaaS, we're 
+                  here to help you succeed.
+                </p>
               </div>
             </div>
           </div>

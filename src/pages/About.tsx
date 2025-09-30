@@ -5,18 +5,18 @@ const bannerImage = "/lovable-uploads/ce10e403-ca16-4a77-8c5d-a5cbbe756455.png";
 const About = () => {
   const milestones = [{
     year: "2021",
-    title: "Initial Concept",
-    description: "Our founder conceptualized and developed the initial version of the Trike, addressing mobility requirements and campus patrol needs.",
+    title: "Conceptualization",
+    description: "Conceptualization of the first Trike prototype—designed for student mobility and future scalability.",
     icon: Lightbulb
   }, {
     year: "2023",
-    title: "First Pilot Model",
-    description: "Successfully tested the first pilot model in controlled campus premises, validating our design and functionality.",
+    title: "First Pilot",
+    description: "First pilot tested within controlled campus environments, demonstrating real-world utility.",
     icon: Target
   }, {
-    year: "2023",
+    year: "2024",
     title: "Public Deployment",
-    description: "Second pilot model deployed in public settings, experienced by Coimbatore City Patrol Officials with positive feedback.",
+    description: "Expanded trials with Coimbatore City Patrol Officials, proving efficiency, stability, and practicality in urban mobility scenarios.",
     icon: Users
   }];
   const values = [{
@@ -48,14 +48,11 @@ const About = () => {
         
         <div className="relative z-10 text-center text-primary-foreground px-6 max-w-4xl mx-auto">
           <h1 className="heading-1 mb-8">
-            Rewriting Conventions!
+            About Elaicle – Innovation Meets Purpose
           </h1>
           <p className="body-large mb-8 opacity-90">
-            Envisioning Sustainability, One Step at a Time
+            Rewriting conventions, one trike at a time
           </p>
-          <blockquote className="body-large italic mb-8 opacity-80">
-            "We aim to contribute our part to a sustainable world, even if that is a 0.0000000000001%"
-          </blockquote>
         </div>
       </section>
 
@@ -63,16 +60,16 @@ const About = () => {
       <section className="section-spacing bg-background">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center mb-16">
-            <h2 className="heading-2 mb-8">Our Story</h2>
+            <h2 className="heading-2 mb-8">Who We Are</h2>
             <p className="body-large text-muted-foreground mb-8 leading-relaxed">
-              We, Elaicle are an Electric automotive manufacturing enterprise, specialising in micro-mobility 
-              and pioneering change with a concentration in Energy Storage. Based in Coimbatore, ELAICLE has 
-              been redefining green innovations and the mobility game.
+              Elaicle is a dedicated electric micro-mobility startup focused exclusively on Trike 2π—our compact, 
+              eco-friendly electric patrol trike. Our mission is to redefine urban mobility by combining cutting-edge 
+              battery technology, efficient design, and sustainability-driven engineering.
             </p>
             <p className="body-regular text-muted-foreground leading-relaxed">
-              A startup that is committed to exponentially amplifying our impact, creating ripples of positive 
-              change with a Greener Mobility and Energy Retention. By integrating advanced energy storage 
-              solutions, we ensure efficiency and longevity in our mobility systems.
+              We design for campuses, industrial complexes, city patrols, and gated communities, ensuring accessible, 
+              reliable, and safe mobility for all users. At Elaicle, we believe one small trike can create a ripple 
+              effect, advancing cleaner, smarter cities for everyone.
             </p>
           </div>
         </div>
@@ -82,9 +79,9 @@ const About = () => {
       <section className="section-spacing bg-slate-100">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="heading-2 mb-8">Our Milestones</h2>
+            <h2 className="heading-2 mb-8">Our Journey</h2>
             <p className="body-large text-muted-foreground">
-              Key moments that shaped our journey towards sustainable mobility
+              From a humble prototype to a public patrol solution, every step reflects passion, precision, and purpose
             </p>
           </div>
 
@@ -115,13 +112,67 @@ const About = () => {
         </div>
       </section>
 
-      {/* Mission & Values */}
+      {/* Sustainability & Impact */}
+      <section className="section-spacing bg-green-50">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="heading-2 mb-8">Sustainability & Impact</h2>
+            <h3 className="heading-3 mb-8 text-success">Mobility with a Mission: A Greener Future</h3>
+            <p className="body-large text-muted-foreground max-w-3xl mx-auto mb-8">
+              Sustainability is the backbone of everything we do. By replacing fuel-based vehicles with electric trikes, 
+              Elaicle actively reduces carbon emissions, urban congestion, and environmental impact. Our commitment is 
+              reflected in alignment with the United Nations Sustainable Development Goals (SDGs).
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div className="bg-card p-8 rounded-2xl shadow-card text-center">
+              <div className="text-5xl font-bold text-success mb-2">7</div>
+              <h4 className="heading-4 mb-3">SDG 7</h4>
+              <p className="body-regular text-muted-foreground">
+                Affordable and Clean Energy: Energy-efficient, swappable battery solutions for uninterrupted, eco-friendly mobility.
+              </p>
+            </div>
+            
+            <div className="bg-card p-8 rounded-2xl shadow-card text-center">
+              <div className="text-5xl font-bold text-success mb-2">9</div>
+              <h4 className="heading-4 mb-3">SDG 9</h4>
+              <p className="body-regular text-muted-foreground">
+                Industry, Innovation, and Infrastructure: Continuous innovation in micro-mobility design and technology, creating sustainable urban infrastructure.
+              </p>
+            </div>
+            
+            <div className="bg-card p-8 rounded-2xl shadow-card text-center">
+              <div className="text-5xl font-bold text-success mb-2">11</div>
+              <h4 className="heading-4 mb-3">SDG 11</h4>
+              <p className="body-regular text-muted-foreground">
+                Sustainable Cities and Communities: Cleaner, quieter transport solutions that foster livable cities.
+              </p>
+            </div>
+          </div>
+
+          <div className="bg-card p-8 rounded-2xl shadow-card">
+            <h4 className="heading-4 mb-6 text-center">Our Sustainability Initiatives</h4>
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <li className="flex items-start space-x-3">
+                <div className="w-2 h-2 bg-success rounded-full mt-2 flex-shrink-0"></div>
+                <span className="body-regular text-muted-foreground">Battery Return & Reward Program: Encouraging responsible recycling of used batteries</span>
+              </li>
+              <li className="flex items-start space-x-3">
+                <div className="w-2 h-2 bg-success rounded-full mt-2 flex-shrink-0"></div>
+                <span className="body-regular text-muted-foreground">Zero-emission urban patrols: Replacing conventional vehicles in campus and municipal mobility</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Mission & Vision */}
       <section className="section-spacing bg-background">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-16">
-            {/* Mission & Vision */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="heading-2 mb-8">Mission & Vision</h2>
+              <h2 className="heading-2 mb-8">Vision & Mission</h2>
               
               <div className="space-y-8">
                 <div>
@@ -135,9 +186,8 @@ const About = () => {
                 <div>
                   <h3 className="heading-4 mb-4 text-primary">Our Mission</h3>
                   <p className="body-regular text-muted-foreground leading-relaxed">
-                    At Elaicle, we drive innovation in battery technologies and energy systems to create 
-                    efficient, eco-friendly solutions for micro-mobility, energy storage, drones, and 
-                    robotics—advancing a cleaner, more sustainable future.
+                    Drive innovation in battery technologies and energy systems for mobility, storage, drones, 
+                    and robotics.
                   </p>
                 </div>
               </div>

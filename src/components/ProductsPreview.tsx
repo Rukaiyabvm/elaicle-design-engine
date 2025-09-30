@@ -32,12 +32,14 @@ const ProductsPreview = () => {
             OUR PRODUCTS
           </div>
           <h2 className="heading-2 mb-8">
-            Meet the 
-            <span className="text-primary"> Trike 2π</span>
+            Trike 2π –
+            <br />
+            <span className="text-primary">Smart, Sustainable, Sleek</span>
           </h2>
           <p className="body-large text-muted-foreground max-w-3xl mx-auto">
-            Innovative Electric Patrol Trike for Efficient Mobility. Built for efficiency, 
-            stability, and ease of use, enhancing mobility needs and security patrolling.
+            The Trike 2π is more than a vehicle; it's a mobility revolution. Engineered for stability, 
+            efficiency, and user-friendly operation, it caters to short-distance travel while reducing 
+            urban congestion and emissions.
           </p>
         </div>
 
@@ -92,7 +94,7 @@ const ProductsPreview = () => {
             <div className="space-y-4">
               <Button variant="default" size="lg" asChild>
                 <Link to="/products" className="flex items-center w-full sm:w-auto">
-                  Explore Specifications
+                  Explore Trike 2π
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Link>
               </Button>
