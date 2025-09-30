@@ -48,7 +48,7 @@ const Footer = () => {
     href: "#"
   }];
   return <footer className="bg-background border-t border-border">
-      <div className="container mx-auto px-6 py-12 bg-[#010901]">
+      <div className="container px-6 py-12 bg-[#010901] mx-0">
         {/* Main Footer Content */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
           {/* Footer Links */}
