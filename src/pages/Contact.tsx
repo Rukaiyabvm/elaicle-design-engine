@@ -2,10 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
-
 const Contact = () => {
-  return (
-    <div className="min-h-screen pt-20">
+  return <div className="min-h-screen pt-20">
       {/* Hero */}
       <section className="section-spacing bg-gradient-hero">
         <div className="container mx-auto px-6">
@@ -88,21 +86,7 @@ const Contact = () => {
       </section>
 
       {/* Demo CTA */}
-      <section className="section-spacing bg-primary">
-        <div className="container mx-auto px-6">
-          <div className="text-center text-primary-foreground">
-            <h2 className="heading-2 mb-8">Book a Demo Ride</h2>
-            <p className="body-large mb-8 max-w-2xl mx-auto opacity-90">
-              Experience the Trike 2π firsthand. Schedule a demo at your location or visit our facility.
-            </p>
-            <Button variant="secondary" size="lg">
-              Schedule Demo
-            </Button>
-          </div>
-        </div>
-      </section>
-    </div>
-  );
+      
+    </div>;
 };
-
 export default Contact;

@@ -76,17 +76,7 @@ const Footer = () => {
   }];
   return <footer className="bg-background-dark text-primary-foreground">
       {/* CTA Banner */}
-      <div className="bg-gradient-hero py-16">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="heading-2 mb-6">Ready to Experience the Future?</h2>
-          <p className="body-large mb-8 max-w-2xl mx-auto">
-            Join the sustainable mobility revolution. Book your demo ride today.
-          </p>
-          <Button variant="secondary" size="lg" asChild>
-            <Link to="/contact">Book Demo Ride</Link>
-          </Button>
-        </div>
-      </div>
+      
 
       {/* Main Footer */}
       <div className="py-16">
