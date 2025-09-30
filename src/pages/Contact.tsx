@@ -46,7 +46,7 @@ const Contact = () => {
                   <Mail className="w-6 h-6 text-primary mt-1" />
                   <div>
                     <h4 className="heading-4 mb-2">Email</h4>
-                    <p className="body-regular text-muted-foreground">contact@elaicle.com</p>
+                    <p className="body-regular text-muted-foreground">office@elaicle.com</p>
                   </div>
                 </div>
                 
@@ -54,7 +54,7 @@ const Contact = () => {
                   <Phone className="w-6 h-6 text-primary mt-1" />
                   <div>
                     <h4 className="heading-4 mb-2">Phone</h4>
-                    <p className="body-regular text-muted-foreground">+91-XXXXXXXXXX</p>
+                    <p className="body-regular text-muted-foreground">+91-9500034351</p>
                   </div>
                 </div>
                 
