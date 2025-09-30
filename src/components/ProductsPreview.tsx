@@ -28,9 +28,7 @@ const ProductsPreview = () => {
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16 fade-in">
-          <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full body-small font-medium mb-6">
-            OUR PRODUCTS
-          </div>
+          <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full body-small font-medium mb-6">OUR PRODUCT</div>
           <h2 className="heading-2 mb-8">
             Trike 2π –
             <br />
@@ -52,21 +50,21 @@ const ProductsPreview = () => {
                 <div className="aspect-square rounded-2xl overflow-hidden shadow-image hover-scale relative">
                   <img src={trikeImages.detail} alt="Trike 2π Detail View" className="w-full h-full object-cover" />
                   <div className="absolute inset-0" style={{
-                    background: 'linear-gradient(135deg, hsl(211 100% 17.1% / 0.2) 0%, transparent 70%)'
-                  }}></div>
+                  background: 'linear-gradient(135deg, hsl(211 100% 17.1% / 0.2) 0%, transparent 70%)'
+                }}></div>
                 </div>
                 <div className="aspect-video rounded-2xl overflow-hidden shadow-image hover-scale relative">
                   <img src={trikeImages.dashboard} alt="Trike 2π Dashboard Display" className="w-full h-full object-cover" />
                   <div className="absolute inset-0" style={{
-                    background: 'linear-gradient(135deg, hsl(211 100% 17.1% / 0.15) 0%, transparent 60%)'
-                  }}></div>
+                  background: 'linear-gradient(135deg, hsl(211 100% 17.1% / 0.15) 0%, transparent 60%)'
+                }}></div>
                 </div>
               </div>
               <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-image hover-scale relative">
                 <img src={trikeImages.outdoor} alt="Trike 2π Outdoor View" className="w-full h-full object-cover" />
                 <div className="absolute inset-0" style={{
-                  background: 'linear-gradient(135deg, hsl(211 100% 17.1% / 0.25) 0%, transparent 80%)'
-                }}></div>
+                background: 'linear-gradient(135deg, hsl(211 100% 17.1% / 0.25) 0%, transparent 80%)'
+              }}></div>
               </div>
             </div>
           </div>
