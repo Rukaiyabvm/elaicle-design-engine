@@ -48,27 +48,20 @@ const Footer = () => {
     href: "#"
   }];
   return <footer className="bg-background border-t border-border">
-      <div className="container mx-auto px-6 py-12">
+      <div className="container mx-auto px-6 py-12 bg-[#010901]">
         {/* Main Footer Content */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
           {/* Footer Links */}
-          {Object.entries(footerLinks).map(([category, links]) => (
-            <div key={category}>
+          {Object.entries(footerLinks).map(([category, links]) => <div key={category}>
               <h3 className="body-regular font-semibold mb-4 text-foreground">{category}</h3>
               <ul className="space-y-2">
-                {links.map(link => (
-                  <li key={link.name}>
-                    <Link 
-                      to={link.href} 
-                      className="body-small text-muted-foreground hover:text-primary transition-colors duration-200"
-                    >
+                {links.map(link => <li key={link.name}>
+                    <Link to={link.href} className="body-small text-muted-foreground hover:text-primary transition-colors duration-200">
                       {link.name}
                     </Link>
-                  </li>
-                ))}
+                  </li>)}
               </ul>
-            </div>
-          ))}
+            </div>)}
         </div>
 
         {/* Bottom Bar */}
@@ -79,24 +72,17 @@ const Footer = () => {
               <div className="relative w-8 h-8 flex items-center justify-center">
                 <span className="text-2xl font-bold text-primary/30 absolute">e</span>
                 <span className="text-2xl font-bold text-primary relative" style={{
-                  clipPath: 'polygon(0 50%, 100% 50%, 100% 100%, 0 100%)'
-                }}>e</span>
+                clipPath: 'polygon(0 50%, 100% 50%, 100% 100%, 0 100%)'
+              }}>e</span>
               </div>
               <span className="font-secondary text-xl font-bold text-foreground tracking-tight">LAICLE</span>
             </div>
 
             {/* Social Links */}
             <div className="flex items-center space-x-4">
-              {socialLinks.map(social => (
-                <a 
-                  key={social.name} 
-                  href={social.href} 
-                  className="w-9 h-9 border border-border rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-200"
-                  aria-label={social.name}
-                >
+              {socialLinks.map(social => <a key={social.name} href={social.href} className="w-9 h-9 border border-border rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-200" aria-label={social.name}>
                   <social.icon className="w-4 h-4" />
-                </a>
-              ))}
+                </a>)}
             </div>
 
             {/* Copyright */}
