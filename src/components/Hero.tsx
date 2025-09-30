@@ -18,7 +18,7 @@ const Hero = () => {
           <h1 className="heading-1 mb-8 font-light my-[40px] mx-[40px]">
             Rewriting Conventions,
             <br />
-            <span className="text-accent">One Trike at a Time</span>
+            <span className="text-center text-slate-200">One Trike at a Time</span>
           </h1>
           
           
