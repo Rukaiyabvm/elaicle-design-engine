@@ -218,7 +218,7 @@ const Products = () => {
           <div className="text-center text-primary-foreground">
             <h2 className="heading-2 mb-8">Pricing</h2>
             <div className="max-w-md mx-auto bg-primary-foreground/10 rounded-2xl p-8 backdrop-blur-sm">
-              <div className="heading-1 mb-4">₹2.5L</div>
+              <div className="heading-1 mb-4">₹0.75L</div>
               <p className="body-large mb-6 opacity-90">Starting Price*</p>
               <p className="body-small opacity-70 mb-8">*Final pricing may vary based on customization and accessories</p>
               
