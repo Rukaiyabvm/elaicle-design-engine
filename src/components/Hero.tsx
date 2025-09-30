@@ -2,36 +2,26 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Play } from "lucide-react";
 const heroImage = "/lovable-uploads/324217eb-769d-4dfa-9923-943917241f1f.png";
-
 const Hero = () => {
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <img
-          src={heroImage}
-          alt="Elaicle Trike 2π Electric Vehicle"
-          className="w-full h-full object-cover"
-        />
+        <img src={heroImage} alt="Elaicle Trike 2π Electric Vehicle" className="w-full h-full object-cover" />
         <div className="absolute inset-0" style={{
-          background: 'linear-gradient(135deg, hsl(211 100% 17.1% / 0.85) 0%, hsl(211 100% 17.1% / 0.3) 50%, transparent 100%)'
-        }}></div>
+        background: 'linear-gradient(135deg, hsl(211 100% 17.1% / 0.85) 0%, hsl(211 100% 17.1% / 0.3) 50%, transparent 100%)'
+      }}></div>
       </div>
 
       {/* Content */}
       <div className="relative z-10 text-center text-primary-foreground px-6 max-w-6xl mx-auto">
         <div className="fade-in">
-          <h1 className="heading-1 mb-8 font-light">
+          <h1 className="heading-1 mb-8 font-light my-[40px] mx-[40px]">
             Rewriting Conventions,
             <br />
             <span className="text-accent">One Trike at a Time</span>
           </h1>
           
-          <p className="body-large mb-12 max-w-3xl mx-auto opacity-90 leading-relaxed">
-            At Elaicle, we envision a world where urban mobility is efficient, sustainable, and effortless. 
-            Our electric patrol trikes combine cutting-edge battery technology, intelligent design, and eco-conscious 
-            engineering to create a seamless, zero-emission transport solution.
-          </p>
+          <p className="body-large mb-12 max-w-3xl mx-auto opacity-90 leading-relaxed">At Elaicle, we envision a world where urban mobility is efficient, sustainable, and effortless. Our electric patrol trikes combine cutting-edge battery technology, intelligent design, and eco-conscious engineering to create a seamless, zero-emission transport solution.</p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Button variant="secondary" size="lg" asChild>
@@ -73,8 +63,6 @@ const Hero = () => {
           <div className="w-1 h-3 bg-white/70 rounded-full mt-2 animate-bounce"></div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
