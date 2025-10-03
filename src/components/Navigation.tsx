@@ -2,9 +2,12 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import elaicLogo from "@/assets/elaicle-logo.png";
+import BookDemoModal from "./BookDemoModal";
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isBookDemoOpen, setIsBookDemoOpen] = useState(false);
   const location = useLocation();
   useEffect(() => {
     const handleScroll = () => {
@@ -33,11 +36,8 @@ const Navigation = () => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-xl">e</span>
-            </div>
-            <span className="font-secondary text-2xl font-bold text-blue-950">eLAICLE</span>
+          <Link to="/" className="flex items-center">
+            <img src={elaicLogo} alt="eLAICLE Logo" className="h-12 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -45,8 +45,8 @@ const Navigation = () => {
             {navLinks.map(link => <Link key={link.name} to={link.href} className={`body-regular font-medium transition-colors duration-200 hover:text-primary ${location.pathname === link.href ? "text-primary" : "text-foreground"}`}>
                 {link.name}
               </Link>)}
-            <Button variant="default" size="lg" asChild>
-              <Link to="/contact">Book Demo Ride</Link>
+            <Button variant="default" size="lg" onClick={() => setIsBookDemoOpen(true)}>
+              Book Demo Ride
             </Button>
           </div>
 
@@ -62,14 +62,21 @@ const Navigation = () => {
               {navLinks.map(link => <Link key={link.name} to={link.href} className="block body-regular font-medium text-foreground hover:text-primary transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
                   {link.name}
                 </Link>)}
-              <Button variant="default" size="lg" className="w-full mt-4" asChild>
-                <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
-                  Book Demo Ride
-                </Link>
+              <Button 
+                variant="default" 
+                size="lg" 
+                className="w-full mt-4"
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  setIsBookDemoOpen(true);
+                }}
+              >
+                Book Demo Ride
               </Button>
             </div>
           </div>}
       </div>
+      <BookDemoModal isOpen={isBookDemoOpen} onClose={() => setIsBookDemoOpen(false)} />
     </nav>;
 };
 export default Navigation;

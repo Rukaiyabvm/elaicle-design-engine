@@ -47,8 +47,8 @@ const Footer = () => {
     icon: Instagram,
     href: "#"
   }];
-  return <footer className="bg-background border-t border-border">
-      <div className="container px-6 py-12 bg-[#010901] mx-0">
+  return <footer className="bg-primary border-t border-primary">
+      <div className="container px-6 py-12 mx-auto">
         {/* Main Footer Content */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
           {/* Footer Links */}
@@ -74,8 +74,8 @@ const Footer = () => {
             </div>
 
             {/* Social Links */}
-            <div className="flex items-center space-x-4 bg-transparent">
-              {socialLinks.map(social => <a key={social.name} href={social.href} className="w-9 h-9 border border-border rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-200" aria-label={social.name}>
+            <div className="flex items-center space-x-4">
+              {socialLinks.map(social => <a key={social.name} href={social.href} className="w-9 h-9 border border-primary-foreground/20 rounded-full flex items-center justify-center hover:bg-primary-foreground/10 hover:border-primary-foreground/40 transition-all duration-200 text-primary-foreground" aria-label={social.name}>
                   <social.icon className="w-4 h-4" />
                 </a>)}
             </div>

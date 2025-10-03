@@ -3,6 +3,7 @@ import AboutPreview from "@/components/AboutPreview";
 import ProductsPreview from "@/components/ProductsPreview";
 import MaaSPreview from "@/components/MaaSPreview";
 import TestimonialsPreview from "@/components/TestimonialsPreview";
+import MediaPreview from "@/components/MediaPreview";
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -38,6 +39,8 @@ const Index = () => {
       <AboutPreview />
       <ProductsPreview />
       <MaaSPreview />
+      <TestimonialsPreview />
+      <MediaPreview />
       
       {/* CTA Section */}
       <section className="section-spacing bg-primary">
@@ -49,13 +52,13 @@ const Index = () => {
               promoting sustainability in every ride. Be part of the change.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="secondary" size="lg" asChild>
+              <Button variant="secondary" size="lg" asChild className="bg-white text-primary hover:bg-white/90">
                 <Link to="/contact" className="flex items-center">
                   Contact Us
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Link>
               </Button>
-              <Button variant="ghost" size="lg" asChild>
+              <Button variant="outline" size="lg" asChild className="bg-transparent text-white border-white hover:bg-white/10">
                 <Link to="/contact">Partner With Us</Link>
               </Button>
             </div>

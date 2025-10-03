@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Lightbulb, Target, Users, Calendar } from "lucide-react";
+import founderImage from "@/assets/founder-shakeel.png";
 const bannerImage = "/lovable-uploads/ce10e403-ca16-4a77-8c5d-a5cbbe756455.png";
 const About = () => {
   const milestones = [{
@@ -213,25 +214,36 @@ const About = () => {
       {/* Founder Quote */}
       <section className="section-spacing bg-primary">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center text-primary-foreground">
-            <blockquote className="heading-3 mb-8 font-light italic">
-              "Innovation thrives where passion meets purpose."
-            </blockquote>
-            <p className="body-large mb-6 opacity-90">
-              Driven by a vision for sustainable mobility, I believe in creating efficient, eco-friendly 
-              solutions that redefine transportation. My journey with Elaicle is fueled by a commitment 
-              to clean energy and impactful innovation.
-            </p>
-            <p className="body-regular opacity-80 mb-8">
-              Together, we are shaping a future where technology and sustainability go hand in hand.
-            </p>
-            <div className="flex items-center justify-center space-x-4">
-              <div className="w-16 h-16 bg-primary-foreground/20 rounded-full flex items-center justify-center text-2xl font-bold">
-                SA
+          <div className="max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Founder Image */}
+              <div className="flex justify-center lg:justify-end">
+                <div className="relative">
+                  <img 
+                    src={founderImage} 
+                    alt="Shakeel Akhtar S - Founder & CEO" 
+                    className="w-80 h-80 object-cover rounded-2xl shadow-2xl"
+                  />
+                  <div className="absolute -bottom-4 -right-4 bg-primary-foreground text-primary px-6 py-3 rounded-xl shadow-lg">
+                    <p className="font-bold">Shakeel Akhtar S</p>
+                    <p className="text-sm">Founder & CEO</p>
+                  </div>
+                </div>
               </div>
-              <div className="text-left">
-                <div className="heading-4">Shakeel Akhtar S</div>
-                <div className="body-regular opacity-80">Founder & CEO</div>
+              
+              {/* Quote Content */}
+              <div className="text-primary-foreground">
+                <blockquote className="heading-3 mb-6 font-light italic">
+                  "Innovation thrives where passion meets purpose."
+                </blockquote>
+                <p className="body-large mb-6 opacity-90 leading-relaxed">
+                  Driven by a vision for sustainable mobility, I believe in creating efficient, eco-friendly 
+                  solutions that redefine transportation. My journey with Elaicle is fueled by a commitment 
+                  to clean energy and impactful innovation.
+                </p>
+                <p className="body-regular opacity-80">
+                  Together, we are shaping a future where technology and sustainability go hand in hand.
+                </p>
               </div>
             </div>
           </div>

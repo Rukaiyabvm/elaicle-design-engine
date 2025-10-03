@@ -1,8 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, FileText, Users, Package, Wrench, CheckCircle, Zap } from "lucide-react";
-
-const maasHero = "/lovable-uploads/f0da27a2-a457-40fd-80be-50e4447e3543.png";
+import maasHeroImage from "@/assets/maas-hero.jpg";
 
 const MaaS = () => {
   const steps = [
@@ -79,12 +78,12 @@ const MaaS = () => {
       <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src={maasHero}
-            alt="Manufacturing as a Service"
+            src={maasHeroImage}
+            alt="Manufacturing as a Service - High-tech manufacturing facility"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0" style={{
-            background: 'linear-gradient(135deg, hsl(211 100% 17.1% / 0.9) 0%, hsl(211 100% 17.1% / 0.5) 60%, transparent 100%)'
+            background: 'linear-gradient(135deg, hsl(211 100% 17.1% / 0.85) 0%, hsl(211 100% 17.1% / 0.5) 60%, transparent 100%)'
           }}></div>
         </div>
         
