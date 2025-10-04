@@ -43,23 +43,23 @@ const Index = () => {
       <MediaPreview />
       
       {/* CTA Section */}
-      <section className="section-spacing bg-primary">
+      <section className="section-spacing section-blue">
         <div className="container mx-auto px-6">
           <div className="text-center text-primary-foreground">
-            <h2 className="heading-2 mb-8">Join Us in Shaping a Cleaner, Smarter Tomorrow</h2>
+            <h2 className="heading-2 mb-8 text-white">Join Us in Shaping a Cleaner, Smarter Tomorrow</h2>
             <p className="body-large mb-12 max-w-2xl mx-auto opacity-90">
               From innovation to action, Elaicle is committed to transforming urban mobility and 
               promoting sustainability in every ride. Be part of the change.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="secondary" size="lg" asChild className="bg-white text-primary hover:bg-white/90">
-                <Link to="/contact" className="flex items-center">
+              <Button variant="secondary" size="lg" asChild className="bg-white text-primary hover:bg-white/90 hover:scale-105 transition-transform">
+                <Link to="/contact" className="flex items-center justify-center">
                   Contact Us
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Link>
               </Button>
-              <Button variant="outline" size="lg" asChild className="bg-transparent text-white border-white hover:bg-white/10">
-                <Link to="/contact">Partner With Us</Link>
+              <Button variant="outline" size="lg" asChild className="bg-transparent text-white border-white hover:bg-white/10 hover:scale-105 transition-transform">
+                <Link to="/contact" className="flex items-center justify-center">Partner With Us</Link>
               </Button>
             </div>
           </div>

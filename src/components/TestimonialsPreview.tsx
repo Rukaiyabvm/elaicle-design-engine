@@ -58,16 +58,15 @@ const TestimonialsPreview = () => {
   };
 
   return (
-    <section className="section-spacing bg-background">
+    <section className="section-spacing section-light-blue">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16 fade-in">
           <div className="inline-block bg-warning/10 text-warning px-4 py-2 rounded-full body-small font-medium mb-6">
             TESTIMONIALS
           </div>
-          <h2 className="heading-2 mb-8">
-            What Our
-            <span className="text-primary"> Customers Say</span>
+          <h2 className="heading-2 mb-8 text-primary">
+            What Our Customers Say
           </h2>
           <p className="body-large text-muted-foreground max-w-3xl mx-auto">
             Real experiences from organizations and individuals who have embraced sustainable mobility with Elaicle.
@@ -152,8 +151,8 @@ const TestimonialsPreview = () => {
 
         {/* CTA */}
         <div className="text-center fade-in">
-            <Button variant="default" size="lg" asChild>
-              <Link to="/contact" className="flex items-center">
+            <Button variant="default" size="lg" asChild className="hover:scale-105 transition-transform">
+              <Link to="/contact" className="flex items-center justify-center">
                 Contact Us
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Link>

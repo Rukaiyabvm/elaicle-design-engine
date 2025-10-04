@@ -33,10 +33,8 @@ const MaaSPreview = () => {
           <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full body-small font-medium mb-6">
             MANUFACTURING AS A SERVICE
           </div>
-          <h2 className="heading-2 mb-8">
-            Empowering Startups Through
-            <br />
-            <span className="text-primary">Manufacturing as a Service (MaaS)</span>
+          <h2 className="heading-2 mb-8 text-primary">
+            Empowering Startups Through Manufacturing as a Service (MaaS)
           </h2>
           <p className="body-large text-muted-foreground max-w-3xl mx-auto mb-12">
             We help innovators bring their ideas to life. From sourcing vendors to part fabrication, 
@@ -61,8 +59,8 @@ const MaaSPreview = () => {
         </div>
 
         <div className="text-center">
-          <Button variant="default" size="lg" asChild>
-            <Link to="/maas" className="flex items-center">
+          <Button variant="default" size="lg" asChild className="hover:scale-105 transition-transform">
+            <Link to="/maas" className="flex items-center justify-center">
               Explore MaaS
               <ArrowRight className="ml-2 w-4 h-4" />
             </Link>

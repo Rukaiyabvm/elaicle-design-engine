@@ -19,8 +19,10 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				primary: ['Helvetica Neue', 'Arial', 'sans-serif'],
-				secondary: ['Lucida Grande', 'sans-serif'],
+				primary: ['Inter', 'sans-serif'],
+				secondary: ['Barlow Condensed', 'sans-serif'],
+				accent: ['Playfair Display', 'serif'],
+				quote: ['Lora', 'serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',

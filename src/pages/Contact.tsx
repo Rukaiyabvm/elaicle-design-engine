@@ -5,10 +5,10 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 const Contact = () => {
   return <div className="min-h-screen pt-20">
       {/* Hero */}
-      <section className="section-spacing bg-gradient-hero">
+      <section className="section-spacing section-blue">
         <div className="container mx-auto px-6">
-          <div className="text-center text-primary-foreground">
-            <h1 className="heading-1 mb-8">Let's Move Forward Together</h1>
+          <div className="text-center text-white">
+            <h1 className="heading-1 mb-8 text-white">Let's Move Forward Together</h1>
             <p className="body-large max-w-2xl mx-auto opacity-90">
               Have questions, partnership ideas, or want to bring Trike 2π to your community? Connect with us 
               and become part of the future of sustainable mobility.
@@ -23,7 +23,7 @@ const Contact = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Contact Form */}
             <div>
-              <h2 className="heading-2 mb-8">Get in Touch</h2>
+              <h2 className="heading-2 mb-8 text-primary">Get in Touch</h2>
               <form className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <Input placeholder="First Name" className="focus-ring" />
@@ -32,7 +32,7 @@ const Contact = () => {
                 <Input placeholder="Email Address" type="email" className="focus-ring" />
                 <Input placeholder="Organization" className="focus-ring" />
                 <Textarea placeholder="Tell us about your requirements..." className="focus-ring min-h-32" />
-                <Button variant="default" size="lg" className="w-full">
+                <Button variant="default" size="lg" className="w-full hover:scale-105 transition-transform">
                   Send Message
                 </Button>
               </form>
@@ -40,7 +40,7 @@ const Contact = () => {
 
             {/* Contact Information */}
             <div>
-              <h3 className="heading-3 mb-8">Contact Information</h3>
+              <h3 className="heading-3 mb-8 text-primary">Contact Information</h3>
               <div className="space-y-8">
                 <div className="flex items-start space-x-4">
                   <Mail className="w-6 h-6 text-primary mt-1" />

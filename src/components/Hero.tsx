@@ -3,62 +3,40 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Play } from "lucide-react";
 const heroImage = "/lovable-uploads/324217eb-769d-4dfa-9923-943917241f1f.png";
 const Hero = () => {
-  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return <section className="relative min-h-screen flex items-end overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <img src={heroImage} alt="Elaicle Trike 2π Electric Vehicle" className="w-full h-full object-cover" />
-        <div className="absolute inset-0" style={{
-        background: 'linear-gradient(135deg, hsl(211 100% 17.1% / 0.85) 0%, hsl(211 100% 17.1% / 0.3) 50%, transparent 100%)'
-      }}></div>
+        <img src={heroImage} alt="Elaicle Trike 2π Electric Vehicle" className="w-full h-full object-cover object-center" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/40 to-transparent"></div>
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 text-center text-primary-foreground px-6 max-w-6xl mx-auto">
+      {/* Content - Bottom Left */}
+      <div className="relative z-10 text-left text-primary-foreground px-6 md:px-12 lg:px-20 pb-20 md:pb-32 max-w-4xl">
         <div className="fade-in">
-          <h1 className="heading-1 mb-8 font-light my-[40px] mx-[40px] text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+          <h1 className="hero-tagline mb-6 text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
             Rewriting Conventions,
             <br />
-            <span className="text-center text-white">One Trike at a Time</span>
+            One Trike at a Time
           </h1>
           
-          <p className="body-large mb-12 max-w-3xl mx-auto text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
-            At Elaicle, we envision a world where urban mobility is efficient, sustainable, and effortless. 
-            Our electric patrol trikes combine cutting-edge battery technology, intelligent design, and 
-            eco-conscious engineering to create a seamless, zero-emission transport solution.
+          <p className="body-large mb-8 max-w-2xl text-white/95 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+            At Elaicle, we envision a world where urban mobility is efficient, sustainable, and effortless.
           </p>
-          
-          
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Button variant="secondary" size="lg" asChild className="bg-white text-primary border-white hover:bg-white/90">
-              <Link to="/products" className="flex items-center">
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Button variant="secondary" size="lg" asChild className="bg-white text-primary border-white hover:bg-white/90 hover:scale-105 transition-transform">
+              <Link to="/products" className="flex items-center justify-center">
                 Discover Trike 2π
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
             </Button>
             
-            <Button variant="outline" size="lg" asChild className="bg-transparent text-white border-white hover:bg-white/10">
-              <Link to="/about" className="flex items-center">
+            <Button variant="outline" size="lg" asChild className="bg-transparent text-white border-white hover:bg-white/10 hover:scale-105 transition-transform">
+              <Link to="/about" className="flex items-center justify-center">
                 About Elaicle
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
             </Button>
-          </div>
-
-          {/* Key Metrics */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 pt-12 border-t border-white/20">
-            <div className="text-center">
-              <div className="heading-3 mb-2 text-white">25-30km</div>
-              <div className="body-regular opacity-90 text-white">Range per Charge</div>
-            </div>
-            <div className="text-center">
-              <div className="heading-3 mb-2 text-white">150min</div>
-              <div className="body-regular opacity-90 text-white">Fast Charging</div>
-            </div>
-            <div className="text-center">
-              <div className="heading-3 mb-2 text-white">150kg</div>
-              <div className="body-regular opacity-90 text-white">Max Load Capacity</div>
-            </div>
           </div>
         </div>
       </div>

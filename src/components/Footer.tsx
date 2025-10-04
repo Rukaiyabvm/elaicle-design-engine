@@ -31,21 +31,13 @@ const Footer = () => {
     }]
   };
   const socialLinks = [{
-    name: "Facebook",
-    icon: Facebook,
-    href: "#"
-  }, {
-    name: "Twitter",
-    icon: Twitter,
-    href: "#"
+    name: "Instagram",
+    icon: Instagram,
+    href: "https://www.instagram.com/elaicle"
   }, {
     name: "LinkedIn",
     icon: Linkedin,
-    href: "#"
-  }, {
-    name: "Instagram",
-    icon: Instagram,
-    href: "#"
+    href: "https://www.linkedin.com/company/elaicle"
   }];
   return <footer className="bg-primary border-t border-primary">
       <div className="container px-6 py-12 mx-auto">
@@ -75,8 +67,8 @@ const Footer = () => {
 
             {/* Social Links */}
             <div className="flex items-center space-x-4">
-              {socialLinks.map(social => <a key={social.name} href={social.href} className="w-9 h-9 border border-primary-foreground/20 rounded-full flex items-center justify-center hover:bg-primary-foreground/10 hover:border-primary-foreground/40 transition-all duration-200 text-primary-foreground" aria-label={social.name}>
-                  <social.icon className="w-4 h-4" />
+              {socialLinks.map(social => <a key={social.name} href={social.href} target="_blank" rel="noopener noreferrer" className="w-10 h-10 border border-primary-foreground/30 rounded-full flex items-center justify-center hover:bg-primary-foreground/10 hover:border-primary-foreground hover:scale-110 transition-all duration-200 text-primary-foreground" aria-label={social.name}>
+                  <social.icon className="w-5 h-5" />
                 </a>)}
             </div>
 

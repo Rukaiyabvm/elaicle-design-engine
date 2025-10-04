@@ -24,15 +24,13 @@ const ProductsPreview = () => {
     value: "All Ages",
     description: "Designed for users of all age groups"
   }];
-  return <section className="section-spacing bg-zinc-200">
+  return <section className="section-spacing bg-slate-50">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16 fade-in">
           <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full body-small font-medium mb-6">OUR PRODUCT</div>
-          <h2 className="heading-2 mb-8">
-            Trike 2π –
-            <br />
-            <span className="text-primary">Smart, Sustainable, Sleek</span>
+          <h2 className="heading-2 mb-8 text-primary">
+            Trike 2π – Smart, Sustainable, Sleek
           </h2>
           <p className="body-large text-muted-foreground max-w-3xl mx-auto">
             The Trike 2π is more than a vehicle; it's a mobility revolution. Engineered for stability, 
@@ -90,8 +88,8 @@ const ProductsPreview = () => {
             </div>
 
             <div className="space-y-4">
-              <Button variant="default" size="lg" asChild>
-                <Link to="/products" className="flex items-center w-full sm:w-auto">
+              <Button variant="default" size="lg" asChild className="hover:scale-105 transition-transform">
+                <Link to="/products" className="flex items-center justify-center w-full sm:w-auto">
                   Explore Trike 2π
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Link>

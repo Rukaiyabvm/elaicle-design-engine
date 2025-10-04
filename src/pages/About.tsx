@@ -57,7 +57,7 @@ const About = () => {
       <section className="section-spacing bg-background mx-px my-0">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center mb-16">
-            <h2 className="heading-2 mb-8">Who We Are</h2>
+            <h2 className="heading-2 mb-8 text-primary">Who We Are</h2>
             <p className="body-large text-muted-foreground mb-8 leading-relaxed">
               Elaicle is a dedicated electric micro-mobility startup focused exclusively on Trike 2π—our compact, 
               eco-friendly electric patrol trike. Our mission is to redefine urban mobility by combining cutting-edge 
@@ -73,10 +73,10 @@ const About = () => {
       </section>
 
       {/* Timeline */}
-      <section className="section-spacing bg-slate-100">
+      <section className="section-spacing bg-slate-50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="heading-2 mb-8">Our Journey</h2>
+            <h2 className="heading-2 mb-8 text-primary">Our Journey</h2>
             <p className="body-large text-muted-foreground">
               From a humble prototype to a public patrol solution, every step reflects passion, precision, and purpose
             </p>
@@ -110,10 +110,10 @@ const About = () => {
       </section>
 
       {/* Sustainability & Impact */}
-      <section className="section-spacing bg-green-50">
+      <section className="section-spacing section-light-blue">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="heading-2 mb-8">Sustainability & Impact</h2>
+            <h2 className="heading-2 mb-8 text-primary">Sustainability & Impact</h2>
             <h3 className="heading-3 mb-8 text-success">Mobility with a Mission: A Greener Future</h3>
             <p className="body-large text-muted-foreground max-w-3xl mx-auto mb-8">
               Sustainability is the backbone of everything we do. By replacing fuel-based vehicles with electric trikes, 
@@ -169,7 +169,7 @@ const About = () => {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="heading-2 mb-8">Vision & Mission</h2>
+              <h2 className="heading-2 mb-8 text-primary">Vision & Mission</h2>
               
               <div className="space-y-8">
                 <div>
@@ -212,7 +212,7 @@ const About = () => {
       </section>
 
       {/* Founder Quote */}
-      <section className="section-spacing bg-primary">
+      <section className="section-spacing section-blue">
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -224,7 +224,7 @@ const About = () => {
                     alt="Shakeel Akhtar S - Founder & CEO" 
                     className="w-80 h-80 object-cover rounded-2xl shadow-2xl"
                   />
-                  <div className="absolute -bottom-4 -right-4 bg-primary-foreground text-primary px-6 py-3 rounded-xl shadow-lg">
+                  <div className="absolute -bottom-4 -right-4 bg-white text-primary px-6 py-3 rounded-xl shadow-lg">
                     <p className="font-bold">Shakeel Akhtar S</p>
                     <p className="text-sm">Founder & CEO</p>
                   </div>
@@ -232,8 +232,8 @@ const About = () => {
               </div>
               
               {/* Quote Content */}
-              <div className="text-primary-foreground">
-                <blockquote className="heading-3 mb-6 font-light italic">
+              <div className="text-white">
+                <blockquote className="quote-text mb-6 text-white">
                   "Innovation thrives where passion meets purpose."
                 </blockquote>
                 <p className="body-large mb-6 opacity-90 leading-relaxed">
@@ -251,10 +251,10 @@ const About = () => {
       </section>
 
       {/* Goals Timeline */}
-      <section className="section-spacing bg-muted/30">
+      <section className="section-spacing bg-slate-50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="heading-2 mb-8">Our Goals</h2>
+            <h2 className="heading-2 mb-8 text-primary">Our Goals</h2>
             <p className="body-large text-muted-foreground">
               Ambitious targets that drive our vision forward
             </p>
@@ -293,15 +293,15 @@ const About = () => {
       </section>
 
       {/* CTA */}
-      <section className="section-spacing bg-blue-100">
+      <section className="section-spacing section-light-blue">
         <div className="container mx-auto px-6">
           <div className="text-center">
-            <h2 className="heading-2 mb-8">Ready to Join Our Journey?</h2>
+            <h2 className="heading-2 mb-8 text-primary">Ready to Join Our Journey?</h2>
             <p className="body-large text-muted-foreground mb-8 max-w-2xl mx-auto">
               Experience the future of sustainable mobility with Elaicle. Let's shape a greener tomorrow together.
             </p>
-            <Button variant="default" size="lg" asChild>
-              <Link to="/contact" className="flex items-center">
+            <Button variant="default" size="lg" asChild className="hover:scale-105 transition-transform">
+              <Link to="/contact" className="flex items-center justify-center">
                 Get in Touch
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
