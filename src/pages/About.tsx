@@ -245,46 +245,7 @@ const About = () => {
       </section>
 
       {/* Goals Timeline */}
-      <section className="section-spacing bg-slate-50">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="heading-2 mb-8 text-primary">Our Goals</h2>
-            <p className="body-large text-muted-foreground">
-              Ambitious targets that drive our vision forward
-            </p>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[{
-              year: "2027",
-              title: "Market Leadership",
-              description: "Establish a strong market presence by capturing 20% of the Indian market share.",
-              icon: Target
-            }, {
-              year: "2030",
-              title: "Revenue Milestone",
-              description: "Achieve ₹300 million in annual revenue, demonstrating significant business growth.",
-              icon: Calendar
-            }, {
-              year: "2035",
-              title: "Industry Leader",
-              description: "Solidify position as a leading manufacturer in the electric vehicle industry.",
-              icon: Users
-            }].map((goal, index) => <div key={`${goal.year}-${index}`} className="text-center">
-                  <div className="bg-card rounded-2xl p-8 shadow-card hover:shadow-card-hover transition-all duration-300 hover-scale">
-                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                      <goal.icon className="w-8 h-8 text-primary" />
-                    </div>
-                    <div className="text-3xl font-bold text-primary mb-4">{goal.year}</div>
-                    <h3 className="heading-4 mb-4">{goal.title}</h3>
-                    <p className="body-regular text-muted-foreground">{goal.description}</p>
-                  </div>
-                </div>)}
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* CTA */}
       <section className="section-spacing section-light-blue">
