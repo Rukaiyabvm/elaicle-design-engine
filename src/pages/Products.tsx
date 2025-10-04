@@ -213,27 +213,7 @@ const Products = () => {
       </section>
 
       {/* Pricing */}
-      <section className="section-spacing section-blue">
-        <div className="container mx-auto px-6">
-          <div className="text-center text-primary-foreground">
-            <h2 className="heading-2 mb-8 text-white">Pricing</h2>
-            <div className="max-w-md mx-auto bg-primary-foreground/10 rounded-2xl p-8 backdrop-blur-sm">
-              <div className="heading-1 mb-4">₹0.75L</div>
-              <p className="body-large mb-6 opacity-90">Starting Price*</p>
-              <p className="body-small opacity-70 mb-8">*Final pricing may vary based on customization and accessories</p>
-              
-              <div className="space-y-4">
-                <Button variant="secondary" size="lg" className="w-full" asChild>
-                  <Link to="/contact">Request Quote</Link>
-                </Button>
-                <Button variant="ghost" size="lg" className="w-full" asChild>
-                  <Link to="/contact">Schedule Demo</Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* CTA */}
       <section className="section-spacing bg-background">
