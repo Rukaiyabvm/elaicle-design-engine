@@ -151,7 +151,7 @@ const About = () => {
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <li className="flex items-start space-x-3">
                 <div className="w-2 h-2 bg-success rounded-full mt-2 flex-shrink-0"></div>
-                <span className="body-regular text-muted-foreground">Battery Return & Reward Program: Encouraging responsible recycling of used batteries</span>
+                <span className="body-regular text-muted-foreground">Battery Return & Recycle Initiative: Encouraging responsible recycling of used batteries</span>
               </li>
               <li className="flex items-start space-x-3">
                 <div className="w-2 h-2 bg-success rounded-full mt-2 flex-shrink-0"></div>
