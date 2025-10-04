@@ -44,10 +44,10 @@ const About = () => {
         </div>
         
         <div className="relative z-10 text-center text-primary-foreground px-6 max-w-4xl mx-auto">
-          <h1 className="heading-1 mb-8">
+          <h1 className="heading-1 mb-8 text-white">
             About Elaicle – Innovation Meets Purpose
           </h1>
-          <p className="body-large mb-8 opacity-90">
+          <p className="body-large mb-8 opacity-90 font-semibold text-3xl">
             Rewriting conventions, one trike at a time
           </p>
         </div>
@@ -126,9 +126,7 @@ const About = () => {
             <div className="bg-card p-8 rounded-2xl shadow-card text-center">
               <div className="text-5xl font-bold text-success mb-2">7</div>
               <h4 className="heading-4 mb-3">SDG 7</h4>
-              <p className="body-regular text-muted-foreground">
-                Affordable and Clean Energy: Energy-efficient, swappable battery solutions for uninterrupted, eco-friendly mobility.
-              </p>
+              <p className="body-regular text-muted-foreground">Affordable and Clean Energy: Energy-efficient electric trikes that provide reliable, eco-friendly urban mobility</p>
             </div>
             
             <div className="bg-card p-8 rounded-2xl shadow-card text-center">
@@ -219,11 +217,7 @@ const About = () => {
               {/* Founder Image */}
               <div className="flex justify-center lg:justify-end">
                 <div className="relative">
-                  <img 
-                    src={founderImage} 
-                    alt="Shakeel Akhtar S - Founder & CEO" 
-                    className="w-80 h-80 object-cover rounded-2xl shadow-2xl"
-                  />
+                  <img src={founderImage} alt="Shakeel Akhtar S - Founder & CEO" className="w-80 h-80 object-cover rounded-2xl shadow-2xl" />
                   <div className="absolute -bottom-4 -right-4 bg-white text-primary px-6 py-3 rounded-xl shadow-lg">
                     <p className="font-bold">Shakeel Akhtar S</p>
                     <p className="text-sm">Founder & CEO</p>
