@@ -1,33 +1,25 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Wrench, Package, CheckCircle, Zap } from "lucide-react";
-
 const MaaSPreview = () => {
-  const services = [
-    {
-      icon: Package,
-      title: "Vendor Sourcing",
-      description: "Access to reliable manufacturing vendors for custom components"
-    },
-    {
-      icon: CheckCircle,
-      title: "Quality Assurance",
-      description: "Strict quality checks and verification throughout the process"
-    },
-    {
-      icon: Wrench,
-      title: "Assembly & Integration",
-      description: "Expert in-house assembly, integration, and comprehensive testing"
-    },
-    {
-      icon: Zap,
-      title: "Fast Turnaround",
-      description: "Optimized workflows for efficient prototype-to-product delivery"
-    }
-  ];
-
-  return (
-    <section className="section-spacing section-blue">
+  const services = [{
+    icon: Package,
+    title: "Vendor Sourcing",
+    description: "Access to reliable manufacturing vendors for custom components"
+  }, {
+    icon: CheckCircle,
+    title: "Quality Assurance",
+    description: "Strict quality checks and verification throughout the process"
+  }, {
+    icon: Wrench,
+    title: "Assembly & Integration",
+    description: "Expert in-house assembly, integration, and comprehensive testing"
+  }, {
+    icon: Zap,
+    title: "Fast Turnaround",
+    description: "Optimized workflows for efficient prototype-to-product delivery"
+  }];
+  return <section className="section-spacing section-blue">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <div className="inline-block bg-white/20 text-white px-4 py-2 rounded-full body-small font-medium mb-6">
@@ -44,18 +36,13 @@ const MaaSPreview = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          {services.map((service) => (
-            <div
-              key={service.title}
-              className="bg-white/95 backdrop-blur-sm p-6 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 hover-scale text-center"
-            >
+          {services.map(service => <div key={service.title} className="bg-white/95 backdrop-blur-sm p-6 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 hover-scale text-center">
               <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
                 <service.icon className="w-7 h-7 text-primary" />
               </div>
-              <h3 className="heading-4 mb-3 text-primary">{service.title}</h3>
+              <h3 className="heading-4 mb-3 text-black">{service.title}</h3>
               <p className="body-regular text-muted-foreground">{service.description}</p>
-            </div>
-          ))}
+            </div>)}
         </div>
 
         <div className="text-center">
@@ -67,8 +54,6 @@ const MaaSPreview = () => {
           </Button>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default MaaSPreview;
