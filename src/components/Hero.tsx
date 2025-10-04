@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Play } from "lucide-react";
 const heroImage = "/lovable-uploads/324217eb-769d-4dfa-9923-943917241f1f.png";
 const Hero = () => {
-  return <section className="relative min-h-screen flex items-end overflow-hidden">
+  return <section className="relative min-h-screen flex items-end overflow-hidden bg-primary">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img src={heroImage} alt="Elaicle Trike 2π Electric Vehicle" className="w-full h-full object-cover object-center" />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/40 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/50 to-primary/30"></div>
       </div>
 
       {/* Content - Bottom Left */}
@@ -24,14 +24,14 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button variant="secondary" size="lg" asChild className="bg-white text-primary border-white hover:bg-white/90 hover:scale-105 transition-transform">
+            <Button variant="secondary" size="lg" asChild>
               <Link to="/products" className="flex items-center justify-center">
                 Discover Trike 2π
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
             </Button>
             
-            <Button variant="outline" size="lg" asChild className="bg-transparent text-white border-white hover:bg-white/10 hover:scale-105 transition-transform">
+            <Button variant="ghost" size="lg" asChild>
               <Link to="/about" className="flex items-center justify-center">
                 About Elaicle
                 <ArrowRight className="ml-2 w-4 h-4" />

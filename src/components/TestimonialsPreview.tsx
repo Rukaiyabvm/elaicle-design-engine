@@ -58,17 +58,17 @@ const TestimonialsPreview = () => {
   };
 
   return (
-    <section className="section-spacing section-light-blue">
+    <section className="section-spacing section-blue">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16 fade-in">
-          <div className="inline-block bg-warning/10 text-warning px-4 py-2 rounded-full body-small font-medium mb-6">
+          <div className="inline-block bg-white/20 text-white px-4 py-2 rounded-full body-small font-medium mb-6">
             TESTIMONIALS
           </div>
-          <h2 className="heading-2 mb-8 text-primary">
+          <h2 className="heading-2 mb-8 text-white">
             What Our Customers Say
           </h2>
-          <p className="body-large text-muted-foreground max-w-3xl mx-auto">
+          <p className="body-large text-white/90 max-w-3xl mx-auto">
             Real experiences from organizations and individuals who have embraced sustainable mobility with Elaicle.
           </p>
         </div>
@@ -135,15 +135,15 @@ const TestimonialsPreview = () => {
 
         {/* Stats Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 fade-in">
-          <div className="text-center p-6 bg-card rounded-2xl shadow-card">
+          <div className="text-center p-6 bg-white/95 backdrop-blur-sm rounded-2xl shadow-card">
             <div className="heading-2 text-primary mb-2">4.9/5</div>
             <div className="body-regular text-muted-foreground">Average Rating</div>
           </div>
-          <div className="text-center p-6 bg-card rounded-2xl shadow-card">
+          <div className="text-center p-6 bg-white/95 backdrop-blur-sm rounded-2xl shadow-card">
             <div className="heading-2 text-primary mb-2">50+</div>
             <div className="body-regular text-muted-foreground">Happy Customers</div>
           </div>
-          <div className="text-center p-6 bg-card rounded-2xl shadow-card">
+          <div className="text-center p-6 bg-white/95 backdrop-blur-sm rounded-2xl shadow-card">
             <div className="heading-2 text-primary mb-2">95%</div>
             <div className="body-regular text-muted-foreground">Satisfaction Rate</div>
           </div>
@@ -151,7 +151,7 @@ const TestimonialsPreview = () => {
 
         {/* CTA */}
         <div className="text-center fade-in">
-            <Button variant="default" size="lg" asChild className="hover:scale-105 transition-transform">
+            <Button variant="secondary" size="lg" asChild>
               <Link to="/contact" className="flex items-center justify-center">
                 Contact Us
                 <ArrowRight className="ml-2 w-4 h-4" />

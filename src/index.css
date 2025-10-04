@@ -147,10 +147,16 @@ All colors MUST be HSL.
     @apply bg-primary text-primary-foreground;
   }
   
+  .section-blue .heading-1,
   .section-blue .heading-2,
   .section-blue .heading-3,
   .section-blue .heading-4 {
     color: hsl(var(--primary-foreground));
+  }
+  
+  /* Section with light grey background */
+  .section-grey {
+    background-color: #F7F7F7;
   }
   
   /* Section with light blue background */

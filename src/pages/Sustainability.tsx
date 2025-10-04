@@ -90,21 +90,21 @@ const Sustainability = () => {
   }];
   return <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20" style={{
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-primary" style={{
       backgroundImage: `url(${sustainabilityHero})`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundAttachment: 'fixed'
     }}>
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-success/60 to-primary/80"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/90 via-primary/70 to-primary/90"></div>
         
         <div className="relative z-10 text-center text-primary-foreground px-6 max-w-4xl mx-auto">
-          <h1 className="heading-1 mb-8">
+          <h1 className="heading-1 mb-8 text-white">
             Moving Forward for a
             <br />
-            <span className="text-emerald-900">Greener Tomorrow</span>
+            <span className="text-white">Greener Tomorrow</span>
           </h1>
-          <p className="body-large mb-12 opacity-90 leading-relaxed">
+          <p className="body-large mb-12 text-white/90 leading-relaxed">
             Our company is committed to advancing sustainable development by aligning with the United Nations 
             Sustainable Development Goals (SDGs) because at Elaicle, sustainability is at the core of our mission.
           </p>
@@ -115,7 +115,7 @@ const Sustainability = () => {
       </section>
 
       {/* Mission Statement */}
-      <section className="section-spacing bg-green-50">
+      <section className="section-spacing section-grey">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="heading-2 mb-8">Our Commitment</h2>
@@ -133,17 +133,17 @@ const Sustainability = () => {
       </section>
 
       {/* Impact Metrics */}
-      <section id="impact" className="section-spacing bg-slate-100">
+      <section id="impact" className="section-spacing section-blue">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="heading-2 mb-8">Our Impact</h2>
-            <p className="body-large text-muted-foreground">
+            <h2 className="heading-2 mb-8 text-white">Our Impact</h2>
+            <p className="body-large text-white/90">
               Measurable results in our sustainability journey
             </p>
           </div>
 
           <div id="impact-metrics" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-            {impactMetrics.map((metric, index) => <div key={metric.label} className="text-center p-8 bg-card rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 hover-scale">
+            {impactMetrics.map((metric, index) => <div key={metric.label} className="text-center p-8 bg-white/95 backdrop-blur-sm rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 hover-scale">
                 <div className="flex justify-center mb-4">
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
                     <metric.icon className={`w-8 h-8 ${metric.color}`} />
@@ -162,7 +162,7 @@ const Sustainability = () => {
       </section>
 
       {/* SDG Goals */}
-      <section className="section-spacing bg-background">
+      <section className="section-spacing section-grey">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="heading-2 mb-8">UN Sustainable Development Goals</h2>
@@ -213,56 +213,56 @@ const Sustainability = () => {
       </section>
 
       {/* Circular Economy */}
-      <section className="section-spacing bg-success/5">
+      <section className="section-spacing section-blue">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="heading-2 mb-8">Circular Economy Initiative</h2>
-              <p className="body-large text-muted-foreground">
+              <h2 className="heading-2 mb-8 text-white">Circular Economy Initiative</h2>
+              <p className="body-large text-white/90">
                 Our comprehensive battery return and recycling program
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="text-center">
-                <div className="w-20 h-20 bg-success/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Battery className="w-10 h-10 text-success" />
+                <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Battery className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="heading-4 mb-4">Purchase</h3>
-                <p className="body-regular text-muted-foreground">
+                <h3 className="heading-4 mb-4 text-white">Purchase</h3>
+                <p className="body-regular text-white/90">
                   Every Elaicle trike comes with a high-quality, long-lasting battery designed for optimal performance.
                 </p>
               </div>
 
               <div className="text-center">
-                <div className="w-20 h-20 bg-success/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <ArrowRight className="w-10 h-10 text-success" />
+                <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <ArrowRight className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="heading-4 mb-4">Return</h3>
-                <p className="body-regular text-muted-foreground">
+                <h3 className="heading-4 mb-4 text-white">Return</h3>
+                <p className="body-regular text-white/90">
                   When your battery reaches end-of-life, return it to us through our reward program for responsible disposal.
                 </p>
               </div>
 
               <div className="text-center">
-                <div className="w-20 h-20 bg-success/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Recycle className="w-10 h-10 text-success" />
+                <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Recycle className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="heading-4 mb-4">Recycle</h3>
-                <p className="body-regular text-muted-foreground">
+                <h3 className="heading-4 mb-4 text-white">Recycle</h3>
+                <p className="body-regular text-white/90">
                   100% recyclable materials are processed into new products, completing the circular economy loop.
                 </p>
               </div>
             </div>
 
-            <div className="text-center mt-12 p-8 bg-card rounded-2xl shadow-card">
+            <div className="text-center mt-12 p-8 bg-white/95 backdrop-blur-sm rounded-2xl shadow-card">
               <div className="text-4xl mb-4">♻️</div>
               <h3 className="heading-3 mb-4 text-success">100% Recyclable Promise</h3>
               <p className="body-regular text-muted-foreground mb-6">
                 We guarantee that every battery purchased from us can be fully recycled, with rewards for customers 
                 who participate in our return program.
               </p>
-              <Button variant="default" size="lg" asChild>
+              <Button variant="secondary" size="lg" asChild>
                 <Link to="/contact">Learn About Rewards</Link>
               </Button>
             </div>
@@ -274,10 +274,10 @@ const Sustainability = () => {
       
 
       {/* CTA */}
-      <section className="section-spacing bg-primary">
+      <section className="section-spacing section-blue">
         <div className="container mx-auto px-6">
           <div className="text-center text-primary-foreground">
-            <h2 className="heading-2 mb-8">Join Our Sustainability Mission</h2>
+            <h2 className="heading-2 mb-8 text-white">Join Our Sustainability Mission</h2>
             <p className="body-large mb-8 max-w-2xl mx-auto opacity-90">
               Be part of the solution. Choose sustainable mobility and help us create a cleaner, 
               greener future for generations to come.

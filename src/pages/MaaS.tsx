@@ -75,7 +75,7 @@ const MaaS = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-primary">
         <div className="absolute inset-0 z-0">
           <img
             src={maasHeroImage}
@@ -83,15 +83,15 @@ const MaaS = () => {
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0" style={{
-            background: 'linear-gradient(135deg, hsl(211 100% 17.1% / 0.85) 0%, hsl(211 100% 17.1% / 0.5) 60%, transparent 100%)'
+            background: 'linear-gradient(135deg, hsl(211 100% 17.1% / 0.9) 0%, hsl(211 100% 17.1% / 0.6) 60%, hsl(211 100% 17.1% / 0.3) 100%)'
           }}></div>
         </div>
         
         <div className="relative z-10 text-center text-primary-foreground px-6 max-w-4xl mx-auto">
-          <h1 className="heading-1 mb-8">
+          <h1 className="heading-1 mb-8 text-white">
             Your Vision, Our Manufacturing Expertise
           </h1>
-          <p className="body-large mb-8 opacity-90 leading-relaxed">
+          <p className="body-large mb-8 text-white/90 leading-relaxed">
             Elaicle's MaaS bridges the gap between design and reality. We empower startups, student innovators, 
             and small enterprises to manufacture, assemble, and scale their products with ease.
           </p>
@@ -99,7 +99,7 @@ const MaaS = () => {
       </section>
 
       {/* How MaaS Works */}
-      <section className="section-spacing bg-background">
+      <section className="section-spacing section-grey">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="heading-2 mb-8">How MaaS Works</h2>
@@ -144,11 +144,11 @@ const MaaS = () => {
       </section>
 
       {/* Why Choose MaaS */}
-      <section className="section-spacing bg-slate-100">
+      <section className="section-spacing section-blue">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="heading-2 mb-8">Why Choose Elaicle MaaS?</h2>
-            <p className="body-large text-muted-foreground">
+            <h2 className="heading-2 mb-8 text-white">Why Choose Elaicle MaaS?</h2>
+            <p className="body-large text-white/90">
               Comprehensive manufacturing solutions designed for innovators
             </p>
           </div>
@@ -162,7 +162,7 @@ const MaaS = () => {
                 <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
                   <benefit.icon className="w-7 h-7 text-primary" />
                 </div>
-                <h3 className="heading-4 mb-4">{benefit.title}</h3>
+                <h3 className="heading-4 mb-4 text-primary">{benefit.title}</h3>
                 <p className="body-regular text-muted-foreground">{benefit.description}</p>
               </div>
             ))}
@@ -171,7 +171,7 @@ const MaaS = () => {
       </section>
 
       {/* Who We Work With */}
-      <section className="section-spacing bg-background">
+      <section className="section-spacing section-grey">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
@@ -197,10 +197,10 @@ const MaaS = () => {
       </section>
 
       {/* CTA */}
-      <section className="section-spacing bg-primary">
+      <section className="section-spacing section-blue">
         <div className="container mx-auto px-6">
           <div className="text-center text-primary-foreground">
-            <h2 className="heading-2 mb-8">Let's Build Your Innovation Together</h2>
+            <h2 className="heading-2 mb-8 text-white">Let's Build Your Innovation Together</h2>
             <p className="body-large mb-12 max-w-2xl mx-auto opacity-90">
               Ready to transform your design into reality? Connect with our MaaS team and 
               start your manufacturing journey today.

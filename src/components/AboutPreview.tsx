@@ -30,7 +30,7 @@ const AboutPreview = () => {
             
             <p className="body-regular mb-8 text-muted-foreground leading-relaxed">Elaicle is a Coimbatore-based micro-mobility startup dedicated to transforming the way people move in campuses, industrial complexes, and urban environments. Our journey began with a simple idea in 2021 to create a trike that is compact, reliable, and environmentally responsible. Today, we deliver mobility solutions that merge design excellence with meaningful sustainability.</p>
 
-            <Button variant="default" size="lg" asChild className="hover:scale-105 transition-transform">
+            <Button variant="default" size="lg" asChild>
               <Link to="/about" className="flex items-center justify-center">
                 Learn More
                 <ArrowRight className="ml-2 w-4 h-4" />

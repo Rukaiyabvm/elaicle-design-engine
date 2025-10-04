@@ -54,19 +54,19 @@ const Products = () => {
   }];
   return <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-primary">
         <div className="absolute inset-0 z-0">
           <img src={productImages.hero} alt="Elaicle Trike 2π Electric Vehicle" className="w-full h-full object-cover" />
           <div className="absolute inset-0" style={{
-          background: 'linear-gradient(135deg, hsl(211 100% 17.1% / 0.8) 0%, hsl(211 100% 17.1% / 0.3) 60%, transparent 100%)'
+          background: 'linear-gradient(135deg, hsl(211 100% 17.1% / 0.9) 0%, hsl(211 100% 17.1% / 0.5) 60%, hsl(211 100% 17.1% / 0.3) 100%)'
         }}></div>
         </div>
         
         <div className="relative z-10 text-center text-primary-foreground px-6 max-w-4xl mx-auto">
-          <h1 className="heading-1 mb-8">
+          <h1 className="heading-1 mb-8 text-white">
             Trike 2π – The Future of Electric Mobility
           </h1>
-          <p className="body-large mb-12 opacity-90 max-w-3xl mx-auto leading-relaxed">
+          <p className="body-large mb-12 text-white/90 max-w-3xl mx-auto leading-relaxed">
             The Trike 2π is a compact three-wheeled electric patrol trike designed for manoeuvrability, stability, 
             and eco-friendly performance. Ideal for campuses, city patrols, and industrial complexes, it delivers 
             zero-emission transport with unmatched efficiency.
@@ -113,11 +113,11 @@ const Products = () => {
       </section>
 
       {/* Features */}
-      <section className="section-spacing bg-gray-200 mx-0 my-0">
+      <section className="section-spacing section-blue">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="heading-2 mb-8">Our Features</h2>
-            <p className="body-large text-muted-foreground">
+            <h2 className="heading-2 mb-8 text-white">Our Features</h2>
+            <p className="body-large text-white/90">
               Advanced engineering meets user-centric design
             </p>
           </div>
@@ -125,8 +125,8 @@ const Products = () => {
           <div className="space-y-16">
             {features.map((feature, index) => <div key={feature.title} className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:direction-reverse' : ''}`}>
                 <div className={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-                  <h3 className="heading-3 mb-6">{feature.title}</h3>
-                  <p className="body-large text-muted-foreground leading-relaxed">
+                  <h3 className="heading-3 mb-6 text-white">{feature.title}</h3>
+                  <p className="body-large text-white/90 leading-relaxed">
                     {feature.description}
                   </p>
                 </div>
@@ -141,7 +141,7 @@ const Products = () => {
       </section>
 
       {/* Specifications */}
-      <section id="specifications" className="section-spacing bg-background">
+      <section id="specifications" className="section-spacing section-grey">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="heading-2 mb-8">Performance Specs</h2>
@@ -213,10 +213,10 @@ const Products = () => {
       </section>
 
       {/* Pricing */}
-      <section className="section-spacing bg-primary">
+      <section className="section-spacing section-blue">
         <div className="container mx-auto px-6">
           <div className="text-center text-primary-foreground">
-            <h2 className="heading-2 mb-8">Pricing</h2>
+            <h2 className="heading-2 mb-8 text-white">Pricing</h2>
             <div className="max-w-md mx-auto bg-primary-foreground/10 rounded-2xl p-8 backdrop-blur-sm">
               <div className="heading-1 mb-4">₹0.75L</div>
               <p className="body-large mb-6 opacity-90">Starting Price*</p>
@@ -244,14 +244,14 @@ const Products = () => {
               Book a demo ride and experience the Trike 2π firsthand. See how our innovative design 
               can transform your mobility needs.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="default" size="lg" asChild>
                 <Link to="/contact" className="flex items-center">
                   Book Demo Ride
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Link>
               </Button>
-              <Button variant="secondary" size="lg" asChild>
+              <Button variant="outline" size="lg" asChild>
                 <Link to="/sustainability">Learn About Impact</Link>
               </Button>
             </div>

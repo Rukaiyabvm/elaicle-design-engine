@@ -36,11 +36,11 @@ const Blogs = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero */}
-      <section className="section-spacing bg-gradient-hero">
+      <section className="section-spacing section-blue">
         <div className="container mx-auto px-6">
           <div className="text-center text-primary-foreground">
-            <h1 className="heading-1 mb-8">Blogs & Insights</h1>
-            <p className="body-large max-w-2xl mx-auto opacity-90">
+            <h1 className="heading-1 mb-8 text-white">Blogs & Insights</h1>
+            <p className="body-large max-w-2xl mx-auto text-white/90">
               Stay informed about our latest innovations, industry insights, and sustainability initiatives
             </p>
           </div>

@@ -24,15 +24,15 @@ const ProductsPreview = () => {
     value: "All Ages",
     description: "Designed for users of all age groups"
   }];
-  return <section className="section-spacing bg-slate-50">
+  return <section className="section-spacing section-blue">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16 fade-in">
-          <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full body-small font-medium mb-6">OUR PRODUCT</div>
-          <h2 className="heading-2 mb-8 text-primary">
+          <div className="inline-block bg-white/20 text-white px-4 py-2 rounded-full body-small font-medium mb-6">OUR PRODUCT</div>
+          <h2 className="heading-2 mb-8 text-white">
             Trike 2π – Smart, Sustainable, Sleek
           </h2>
-          <p className="body-large text-muted-foreground max-w-3xl mx-auto">
+          <p className="body-large text-white/90 max-w-3xl mx-auto">
             The Trike 2π is more than a vehicle; it's a mobility revolution. Engineered for stability, 
             efficiency, and user-friendly operation, it caters to short-distance travel while reducing 
             urban congestion and emissions.
@@ -69,35 +69,35 @@ const ProductsPreview = () => {
 
           {/* Features */}
           <div className="fade-in">
-            <h3 className="heading-3 mb-8">Key Features</h3>
+            <h3 className="heading-3 mb-8 text-white">Key Features</h3>
             <div className="space-y-6 mb-8">
               {features.map((feature, index) => <div key={feature.title} className="flex items-start space-x-4">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
-                      <feature.icon className="w-6 h-6 text-primary" />
+                    <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
+                      <feature.icon className="w-6 h-6 text-white" />
                     </div>
                   </div>
                   <div>
                     <div className="flex items-baseline space-x-3 mb-2">
-                      <h4 className="heading-4 text-foreground">{feature.title}</h4>
-                      <span className="body-large font-medium text-primary">{feature.value}</span>
+                      <h4 className="heading-4 text-white">{feature.title}</h4>
+                      <span className="body-large font-medium text-white">{feature.value}</span>
                     </div>
-                    <p className="body-regular text-muted-foreground">{feature.description}</p>
+                    <p className="body-regular text-white/90">{feature.description}</p>
                   </div>
                 </div>)}
             </div>
 
             <div className="space-y-4">
-              <Button variant="default" size="lg" asChild className="hover:scale-105 transition-transform">
+              <Button variant="secondary" size="lg" asChild>
                 <Link to="/products" className="flex items-center justify-center w-full sm:w-auto">
                   Explore Trike 2π
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Link>
               </Button>
               
-              <div className="flex items-center space-x-4 text-muted-foreground">
+              <div className="flex items-center space-x-4 text-white/90">
                 <span className="body-small">Starting from</span>
-                <span className="heading-4 text-primary">₹0.75L*</span>
+                <span className="heading-4 text-white">₹0.75L*</span>
                 <span className="body-small">*Price may vary</span>
               </div>
             </div>
@@ -122,9 +122,9 @@ const ProductsPreview = () => {
           title: "Battery Life",
           value: "3 Years",
           desc: "Swappable design"
-        }].map((item, index) => <div key={item.title} className="text-center p-6 bg-card rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300">
+        }].map((item, index) => <div key={item.title} className="text-center p-6 bg-white/95 backdrop-blur-sm rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300">
               <div className="heading-3 text-primary mb-2">{item.value}</div>
-              <div className="heading-4 mb-2">{item.title}</div>
+              <div className="heading-4 mb-2 text-primary">{item.title}</div>
               <div className="body-small text-muted-foreground">{item.desc}</div>
             </div>)}
         </div>
