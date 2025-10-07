@@ -123,8 +123,8 @@ const ProductsPreview = () => {
           value: "3 Years",
           desc: "Swappable design"
         }].map((item, index) => <div key={item.title} className="text-center p-6 bg-white/95 backdrop-blur-sm rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300">
-              <div className="heading-3 text-primary mb-2 bg-indigo-950">{item.value}</div>
-              <div className="heading-4 mb-2 text-primary bg-blue-950">{item.title}</div>
+              <div className="heading-3 text-primary mb-2">{item.value}</div>
+              <div className="heading-4 mb-2 text-foreground">{item.title}</div>
               <div className="body-small text-muted-foreground">{item.desc}</div>
             </div>)}
         </div>

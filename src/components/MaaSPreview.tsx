@@ -40,8 +40,8 @@ const MaaSPreview = () => {
               <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
                 <service.icon className="w-7 h-7 text-primary" />
               </div>
-              <h3 className="heading-4 mb-3 text-black">{service.title}</h3>
-              <p className="body-regular text-muted-foreground">{service.description}</p>
+              <h3 className="heading-4 mb-3 text-foreground">{service.title}</h3>
+              <p className="body-regular text-foreground/80">{service.description}</p>
             </div>)}
         </div>
 

@@ -86,7 +86,7 @@ const TestimonialsPreview = () => {
                         {testimonial.image}
                       </div>
                       <div className="text-left">
-                        <div className="heading-4 text-foreground bg-blue-950">{testimonial.name}</div>
+                        <div className="heading-4 text-foreground">{testimonial.name}</div>
                         <div className="body-small text-muted-foreground">
                           {testimonial.role} • {testimonial.organization}
                         </div>
@@ -100,22 +100,6 @@ const TestimonialsPreview = () => {
           {/* Navigation Dots */}
           <div className="flex justify-center space-x-2 mt-8">
             {testimonials.map((_, index) => <button key={index} onClick={() => setCurrentIndex(index)} className={`w-3 h-3 rounded-full transition-colors duration-200 ${index === currentIndex ? 'bg-primary' : 'bg-gray-300'}`} aria-label={`Go to testimonial ${index + 1}`} />)}
-          </div>
-        </div>
-
-        {/* Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 fade-in">
-          <div className="text-center p-6 bg-white/95 backdrop-blur-sm rounded-2xl shadow-card">
-            <div className="heading-2 text-primary mb-2">4.9/5</div>
-            <div className="body-regular text-muted-foreground">Average Rating</div>
-          </div>
-          <div className="text-center p-6 bg-white/95 backdrop-blur-sm rounded-2xl shadow-card">
-            <div className="heading-2 text-primary mb-2">50+</div>
-            <div className="body-regular text-muted-foreground">Happy Customers</div>
-          </div>
-          <div className="text-center p-6 bg-white/95 backdrop-blur-sm rounded-2xl shadow-card">
-            <div className="heading-2 text-primary mb-2">95%</div>
-            <div className="body-regular text-muted-foreground">Satisfaction Rate</div>
           </div>
         </div>
 
