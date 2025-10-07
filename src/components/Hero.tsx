@@ -7,7 +7,7 @@ const Hero = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img src={heroImage} alt="Elaicle Trike 2π Electric Vehicle" className="w-full h-full object-cover object-center" />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/50 to-primary/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/50 via-primary/25 to-transparent"></div>
       </div>
 
       {/* Content - Bottom Left */}

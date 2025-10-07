@@ -47,10 +47,6 @@ const Products = () => {
     title: "Universal Accessibility",
     description: "Comfortable and easy to operate for all age groups. Intuitive controls make it accessible to everyone.",
     image: productImages.dashboard
-  }, {
-    title: "Swappable Battery",
-    description: "Swappable battery for uninterrupted usage. Includes reverse mode for enhanced maneuverability and convenience.",
-    image: productImages.component
   }];
   return <div className="min-h-screen">
       {/* Hero Section */}
