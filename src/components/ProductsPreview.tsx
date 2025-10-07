@@ -52,10 +52,10 @@ const ProductsPreview = () => {
                 }}></div>
                 </div>
                 <div className="aspect-video rounded-2xl overflow-hidden shadow-image hover-scale relative">
-                  <img src={trikeImages.dashboard} alt="Trike 2π Dashboard Display" className="w-full h-full object-cover" />
                   <div className="absolute inset-0" style={{
-                  background: 'linear-gradient(135deg, hsl(211 100% 17.1% / 0.15) 0%, transparent 60%)'
-                }}></div>
+                    background: 'linear-gradient(135deg, hsl(211 100% 17.1% / 0.15) 0%, transparent 60%)'
+                  }}>
+                </div>
                 </div>
               </div>
               <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-image hover-scale relative">
@@ -79,7 +79,7 @@ const ProductsPreview = () => {
                   </div>
                   <div>
                     <div className="flex items-baseline space-x-3 mb-2">
-                      <h4 className="heading-4 text-white">{feature.title}</h4>
+                      <h4 className="heading-3 text-white">{feature.title}</h4>
                       <span className="body-large font-medium text-white">{feature.value}</span>
                     </div>
                     <p className="body-regular text-white/90">{feature.description}</p>
@@ -97,7 +97,7 @@ const ProductsPreview = () => {
               
               <div className="flex items-center space-x-4 text-white/90">
                 <span className="body-small">Starting from</span>
-                <span className="heading-4 text-white">₹0.75L*</span>
+                <span className="heading-3 text-white">₹0.75L*</span>
                 <span className="body-small">*Price may vary</span>
               </div>
             </div>
@@ -123,7 +123,7 @@ const ProductsPreview = () => {
           value: "3 Years",
           desc: "Swappable design"
         }].map((item, index) => <div key={item.title} className="text-center p-6 bg-white/95 backdrop-blur-sm rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300">
-              <div className="heading-3 text-primary mb-2">{item.value}</div>
+              <div className="heading-4 text-primary mb-2">{item.value}</div>
               <div className="heading-4 mb-2 text-foreground">{item.title}</div>
               <div className="body-small text-muted-foreground">{item.desc}</div>
             </div>)}

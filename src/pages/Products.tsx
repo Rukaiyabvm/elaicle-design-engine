@@ -98,9 +98,6 @@ const Products = () => {
             <div className="aspect-square rounded-2xl overflow-hidden shadow-image hover-scale">
               <img src={productImages.detail} alt="Trike 2π Detail" className="w-full h-full object-cover" />
             </div>
-            <div className="aspect-square rounded-2xl overflow-hidden shadow-image hover-scale">
-              <img src={productImages.dashboard} alt="Trike 2π Dashboard" className="w-full h-full object-cover" />
-            </div>
             <div className="lg:col-span-2 aspect-video rounded-2xl overflow-hidden shadow-image hover-scale">
               <img src={productImages.building} alt="Trike 2π Context View" className="w-full h-full object-cover" />
             </div>
