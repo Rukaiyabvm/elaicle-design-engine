@@ -48,7 +48,7 @@ const Footer = () => {
               <h3 className="body-regular font-semibold mb-4 text-slate-50">{category}</h3>
               <ul className="space-y-2">
                 {links.map(link => <li key={link.name}>
-                    <Link to={link.href} className="body-small text-muted-foreground hover:text-primary transition-colors duration-200">
+                    <Link to={link.href} className="body-small text-slate-50/80 hover:text-slate-50 transition-colors duration-200">
                       {link.name}
                     </Link>
                   </li>)}
@@ -74,7 +74,7 @@ const Footer = () => {
 
             {/* Copyright */}
             <div className="text-center md:text-right">
-              <p className="body-small text-muted-foreground">
+              <p className="body-small text-slate-50/80">
                 © {currentYear} eLAICLE. All rights reserved.
               </p>
             </div>
