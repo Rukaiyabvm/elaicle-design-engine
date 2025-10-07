@@ -104,7 +104,7 @@ const Products = () => {
           </div>
         </div>
       </section>
-
+        {/* Features */}
       {/* Features */}
       <section className="section-spacing section-blue">
         <div className="container mx-auto px-6">
