@@ -73,7 +73,7 @@ const About = () => {
       </section>
 
       {/* Timeline */}
-      <section className="section-spacing bg-slate-50">
+      <section className=" bg-slate-50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="heading-2 mb-8 text-primary">Our Journey</h2>

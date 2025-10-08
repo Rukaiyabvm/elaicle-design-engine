@@ -60,10 +60,7 @@ const Footer = () => {
         <div className="border-t border-border pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
             {/* Logo - Ultra Minimal with half-etched 'e' */}
-            <div className="flex items-center space-x-2">
-              
-              <span className="font-secondary text-xl font-bold tracking-tight text-slate-50">eLAICLE</span>
-            </div>
+           
 
             {/* Social Links */}
             <div className="flex items-center space-x-4">
@@ -75,7 +72,7 @@ const Footer = () => {
             {/* Copyright */}
             <div className="text-center md:text-right">
               <p className="body-small text-slate-50/80">
-                © {currentYear} eLAICLE. All rights reserved.
+                © {currentYear} Elaicle. All Rights Reserved
               </p>
             </div>
           </div>

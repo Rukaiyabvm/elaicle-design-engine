@@ -26,7 +26,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4">
             <Button variant="secondary" size="lg" asChild>
               <Link to="/products" className="flex items-center justify-center">
-                Discover Trike 2π
+                Discover 
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
             </Button>

@@ -172,10 +172,7 @@ const Products = () => {
                     <span className="body-regular text-muted-foreground">Battery Life</span>
                     <span className="body-regular font-medium">~3 years</span>
                   </div>
-                  <div className="flex justify-between border-b border-border pb-2">
-                    <span className="body-regular text-muted-foreground">Battery Type</span>
-                    <span className="body-regular font-medium">Swappable Li-ion</span>
-                  </div>
+        
                 </div>
               </div>
 
