@@ -86,7 +86,7 @@ const TestimonialsPreview = () => {
                         {testimonial.image}
                       </div>
                       <div className="text-left">
-                        <div className="heading-4 text-black dark:text-white">{testimonial.name}</div>
+                        <div className="text-lg font-semibold text-gray-900 dark:text-gray-100">{testimonial.name}</div>
                         <div className="body-small text-muted-foreground">
                           {testimonial.role} • {testimonial.organization}
                         </div>
