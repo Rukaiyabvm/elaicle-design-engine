@@ -6,28 +6,28 @@ const TestimonialsPreview = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const testimonials = [{
     id: 1,
-    name: "Rajesh Kumar",
-    role: "Campus Security Head",
-    organization: "IIT Coimbatore",
+    name: "Mr. Balakrishnan",
+    role: "Former Commissioner of Police",
+    organization: "Coimbatore",
     rating: 5,
-    content: "The Trike 2π has revolutionized our campus patrol operations. Its maneuverability in tight spaces and reliable battery life make it perfect for our security rounds. The team can cover more ground efficiently while reducing our carbon footprint.",
-    image: "RK"
+    content: "Elaicle’s vehicle brings a new dimension to smart patrolling for smart cities. Its design enhances mobility, public engagement, and operational efficiency for ground-level policing.",
+    image: "BK"
   }, {
     id: 2,
-    name: "Priya Nair",
-    role: "Sustainability Officer",
-    organization: "Tech Park Chennai",
+    name: "Ms. Priyanka",
+    role: "Sub-Inspector of Police",
+    organization: "Race Course Police Station",
     rating: 5,
-    content: "Elaicle's commitment to sustainability aligns perfectly with our environmental goals. The trike's energy efficiency and the battery return program demonstrate their dedication to circular economy principles.",
+    content: "With features like the PA system and easy maneuverability, this vehicle makes field patrolling more efficient and practical. It’s user-friendly and purpose-built for real policing needs.",
     image: "PN"
   }, {
     id: 3,
-    name: "Inspector Murugan",
-    role: "Traffic Police",
-    organization: "Coimbatore City Police",
+    name: "Brathikan VM",
+    role: "Principal Architect of Research & Development",
+    organization: "Kumaraguru Institutions",
     rating: 5,
-    content: "For urban patrolling, the Trike 2π is exceptional. Its stability, quick charging, and ease of use have made our officers more effective in their duties. The vehicle handles well in all weather conditions.",
-    image: "IM"
+    content: "Elaicle is a bold step forward in mobility innovation. It’s thoughtfully engineered, functional, and built with real purpose.",
+    image: "BR"
   }];
   useEffect(() => {
     const timer = setInterval(() => {
