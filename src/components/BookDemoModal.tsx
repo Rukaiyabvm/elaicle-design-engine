@@ -279,13 +279,14 @@ const BookDemoModal = ({ isOpen, onClose }: BookDemoModalProps) => {
                 </PopoverTrigger>
                 <PopoverContent className="w-auto p-0" align="start">
                   <Calendar
-                    mode="single"
-                    selected={date}
-                    onSelect={setDate}
-                    disabled={(day) => day < today}
-                    initialFocus
-                    className="pointer-events-auto"
-                  />
+  mode="single"
+  selected={date}
+  onSelect={setDate}
+  disabled={(day) => day < today}
+  initialFocus
+  className="pointer-events-auto bg-white text-gray-900"
+ />
+
                 </PopoverContent>
               </Popover>
             </div>
