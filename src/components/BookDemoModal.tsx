@@ -36,18 +36,19 @@ const BookDemoModal = ({ isOpen, onClose }: BookDemoModalProps) => {
     name: "",
     email: "",
     phone: "",
-    location: "",
+    state: "",
+    city: "",
     time: "",
   });
 
-  const locations = [
-    "Coimbatore, Tamil Nadu",
-    "Chennai, Tamil Nadu",
-    "Bangalore, Karnataka",
-    "Hyderabad, Telangana",
-    "Pune, Maharashtra",
-    "Other",
-  ];
+  // Simple state → city mapping
+  const stateOptions: Record<string, string[]> = {
+    "Tamil Nadu": ["Coimbatore", "Chennai", "Madurai", "Other"],
+    Karnataka: ["Bengaluru", "Mysuru", "Mangaluru", "Other"],
+    Telangana: ["Hyderabad", "Warangal", "Other"],
+    Maharashtra: ["Pune", "Mumbai", "Nagpur", "Other"],
+    "Other State": ["Other"],
+  };
 
   const timeSlots = [
     "09:00 AM",
@@ -60,15 +61,28 @@ const BookDemoModal = ({ isOpen, onClose }: BookDemoModalProps) => {
     "05:00 PM",
   ];
 
+  // Today at midnight (so “today” is allowed, earlier dates disabled)
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!date || !formData.name || !formData.email || !formData.phone || !formData.location || !formData.time) {
+    if (
+      !date ||
+      !formData.name ||
+      !formData.email ||
+      !formData.phone ||
+      !formData.state ||
+      !formData.city ||
+      !formData.time
+    ) {
       setStatus("error");
       return;
     }
 
     setIsSubmitting(true);
+    setStatus(null);
 
     try {
       const res = await fetch("https://formsubmit.co/ajax/office@elaicle.com", {
@@ -82,7 +96,8 @@ const BookDemoModal = ({ isOpen, onClose }: BookDemoModalProps) => {
           Name: formData.name,
           Email: formData.email,
           Phone: formData.phone,
-          Location: formData.location,
+          State: formData.state,
+          City: formData.city,
           Date: date ? format(date, "PPP") : "",
           Time: formData.time,
         }),
@@ -90,30 +105,30 @@ const BookDemoModal = ({ isOpen, onClose }: BookDemoModalProps) => {
 
       if (res.ok) {
         setStatus("success");
-
         setFormData({
           name: "",
           email: "",
           phone: "",
-          location: "",
+          state: "",
+          city: "",
           time: "",
         });
         setDate(undefined);
-
-        // Auto-close modal after 2 seconds
-        setTimeout(() => {
-          onClose();
-          setStatus(null);
-        }, 2000);
       } else {
         setStatus("error");
       }
-    } catch {
+    } catch (error) {
+      console.error(error);
       setStatus("error");
     } finally {
       setIsSubmitting(false);
     }
   };
+
+  const citiesForSelectedState =
+    formData.state && stateOptions[formData.state]
+      ? stateOptions[formData.state]
+      : [];
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
@@ -126,18 +141,16 @@ const BookDemoModal = ({ isOpen, onClose }: BookDemoModalProps) => {
         </DialogHeader>
 
         <form onSubmit={handleSubmit} className="space-y-6 mt-6">
-
-          {/* Success Box */}
+          {/* Status Messages */}
           {status === "success" && (
             <div className="rounded-lg border border-emerald-500 bg-emerald-50 px-4 py-3 text-sm text-emerald-700">
-              Your demo has been booked successfully! We’ll reach out to confirm shortly.
+              Your demo request has been submitted successfully. We&apos;ll contact you soon.
             </div>
           )}
 
-          {/* Error Box */}
           {status === "error" && (
             <div className="rounded-lg border border-red-500 bg-red-50 px-4 py-3 text-sm text-red-700">
-              Please fill all fields correctly or try again later.
+              Please fill in all fields correctly or try again in a moment.
             </div>
           )}
 
@@ -150,7 +163,9 @@ const BookDemoModal = ({ isOpen, onClose }: BookDemoModalProps) => {
               <Input
                 id="name"
                 value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                onChange={(e) =>
+                  setFormData((prev) => ({ ...prev, name: e.target.value }))
+                }
                 placeholder="Enter your full name"
                 className="mt-2"
                 required
@@ -166,7 +181,9 @@ const BookDemoModal = ({ isOpen, onClose }: BookDemoModalProps) => {
                   id="email"
                   type="email"
                   value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  onChange={(e) =>
+                    setFormData((prev) => ({ ...prev, email: e.target.value }))
+                  }
                   placeholder="your.email@example.com"
                   className="mt-2"
                   required
@@ -181,7 +198,9 @@ const BookDemoModal = ({ isOpen, onClose }: BookDemoModalProps) => {
                   id="phone"
                   type="tel"
                   value={formData.phone}
-                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  onChange={(e) =>
+                    setFormData((prev) => ({ ...prev, phone: e.target.value }))
+                  }
                   placeholder="+91 XXXXX XXXXX"
                   className="mt-2"
                   required
@@ -190,26 +209,54 @@ const BookDemoModal = ({ isOpen, onClose }: BookDemoModalProps) => {
             </div>
           </div>
 
-          {/* Location Selection */}
-          <div>
-            <Label htmlFor="location" className="body-regular font-medium">
-              Demo Location *
-            </Label>
-            <Select
-              value={formData.location}
-              onValueChange={(value) => setFormData({ ...formData, location: value })}
-            >
-              <SelectTrigger className="mt-2">
-                <SelectValue placeholder="Select your preferred location" />
-              </SelectTrigger>
-              <SelectContent>
-                {locations.map((location) => (
-                  <SelectItem key={location} value={location}>
-                    {location}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+          {/* State & City Selection */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <Label className="body-regular font-medium">State *</Label>
+              <Select
+                value={formData.state}
+                onValueChange={(value) =>
+                  setFormData((prev) => ({ ...prev, state: value, city: "" }))
+                }
+              >
+                <SelectTrigger className="mt-2">
+                  <SelectValue placeholder="Select state" />
+                </SelectTrigger>
+                <SelectContent>
+                  {Object.keys(stateOptions).map((state) => (
+                    <SelectItem key={state} value={state}>
+                      {state}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+
+            <div>
+              <Label className="body-regular font-medium">City *</Label>
+              <Select
+                value={formData.city}
+                onValueChange={(value) =>
+                  setFormData((prev) => ({ ...prev, city: value }))
+                }
+                disabled={!formData.state}
+              >
+                <SelectTrigger className="mt-2">
+                  <SelectValue
+                    placeholder={
+                      formData.state ? "Select city" : "Select state first"
+                    }
+                  />
+                </SelectTrigger>
+                <SelectContent>
+                  {citiesForSelectedState.map((city) => (
+                    <SelectItem key={city} value={city}>
+                      {city}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
           </div>
 
           {/* Date and Time Selection */}
@@ -235,7 +282,7 @@ const BookDemoModal = ({ isOpen, onClose }: BookDemoModalProps) => {
                     mode="single"
                     selected={date}
                     onSelect={setDate}
-                    disabled={(day) => day < new Date()}
+                    disabled={(day) => day < today}
                     initialFocus
                     className="pointer-events-auto"
                   />
@@ -249,7 +296,9 @@ const BookDemoModal = ({ isOpen, onClose }: BookDemoModalProps) => {
               </Label>
               <Select
                 value={formData.time}
-                onValueChange={(value) => setFormData({ ...formData, time: value })}
+                onValueChange={(value) =>
+                  setFormData((prev) => ({ ...prev, time: value }))
+                }
               >
                 <SelectTrigger className="mt-2">
                   <SelectValue placeholder="Select time slot" />
@@ -279,7 +328,12 @@ const BookDemoModal = ({ isOpen, onClose }: BookDemoModalProps) => {
             >
               Cancel
             </Button>
-            <Button type="submit" variant="default" className="flex-1" disabled={isSubmitting}>
+            <Button
+              type="submit"
+              variant="default"
+              className="flex-1"
+              disabled={isSubmitting}
+            >
               {isSubmitting ? "Submitting..." : "Confirm Booking"}
             </Button>
           </div>
@@ -290,6 +344,7 @@ const BookDemoModal = ({ isOpen, onClose }: BookDemoModalProps) => {
 };
 
 export default BookDemoModal;
+
 
   );
 };
