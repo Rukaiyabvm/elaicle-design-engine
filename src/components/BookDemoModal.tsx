@@ -277,17 +277,28 @@ const BookDemoModal = ({ isOpen, onClose }: BookDemoModalProps) => {
                     {date ? format(date, "PPP") : <span>Pick a date</span>}
                   </Button>
                 </PopoverTrigger>
-                <PopoverContent className="w-auto p-0" align="start">
-                  <Calendar
-  mode="single"
-  selected={date}
-  onSelect={setDate}
-  disabled={(day) => day < today}
-  initialFocus
-  className="pointer-events-auto bg-white text-gray-900"
- />
+                <PopoverContent
+  className="w-auto p-0 bg-white border border-gray-200"
+  align="start"
+>
+  <div className="p-2 text-gray-900">
+    <Calendar
+      mode="single"
+      selected={date}
+      onSelect={setDate}
+      disabled={(day) => day < today}
+      initialFocus
+      className="pointer-events-auto bg-white"
+      classNames={{
+        caption_label: "text-sm font-medium text-gray-900",
+        head_cell: "text-xs text-gray-500 font-normal",
+        day: "h-9 w-9 text-sm text-gray-900 hover:bg-gray-100 aria-selected:bg-primary aria-selected:text-primary-foreground",
+        day_disabled: "text-gray-300",
+      }}
+    />
+  </div>
+</PopoverContent>
 
-                </PopoverContent>
               </Popover>
             </div>
 
