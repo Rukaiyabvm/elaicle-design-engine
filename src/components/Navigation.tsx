@@ -4,79 +4,174 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import elaicLogo from "@/assets/elaicle-logo.png";
 import BookDemoModal from "./BookDemoModal";
-const Navigation = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isBookDemoOpen, setIsBookDemoOpen] = useState(false);
-  const location = useLocation();
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-  const navLinks = [{
-    name: "About",
-    href: "/about"
-  }, {
-    name: "Products",
-    href: "/products"
-  }, {
-    name: "MaaS",
-    href: "/maas"
-  }, {
-    name: "Blogs",
-    href: "/blogs"
-  }, {
-    name: "Contact",
-    href: "/contact"
-  }];
-  return <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-background/70 backdrop-blur-xl shadow-lg rounded-b-3xl mx-4 mt-2`}>
-      <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link to="/" className="flex items-center">
-            <img src={elaicLogo} alt="eLAICLE Logo" className="h-16 w-auto" />
-          </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
-            {navLinks.map(link => <Link key={link.name} to={link.href} className={`body-regular font-medium transition-colors duration-200 hover:text-primary ${location.pathname === link.href ? "text-primary" : "text-foreground"}`}>
-                {link.name}
-              </Link>)}
-            <Button variant="default" size="lg" onClick={() => setIsBookDemoOpen(true)}>
-              Book Demo Ride
-            </Button>
+const SCROLL_THRESHOLD = 56; // px
+
+const navLinks = [
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Trike 2π", href: "/products" },
+  { name: "MaaS", href: "/maas" },
+  { name: "Blogs", href: "/blogs" },
+  { name: "Contact", href: "/contact" },
+];
+
+export default function Navigation() {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [bookDemoOpen, setBookDemoOpen] = useState(false);
+  const [reduceMotion, setReduceMotion] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setReduceMotion(media.matches);
+    const mediaHandler = () => setReduceMotion(media.matches);
+    media.addEventListener?.("change", mediaHandler);
+    return () => media.removeEventListener?.("change", mediaHandler);
+  }, []);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setIsScrolled(window.scrollY > SCROLL_THRESHOLD);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // close mobile menu on route change
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [location.pathname]);
+
+  const transitionClass = reduceMotion ? "transition-none" : "transition-all duration-300 ease-out";
+
+  return (
+    <>
+      <header
+        className={`fixed inset-x-4 top-4 z-50 ${transitionClass}`}
+        aria-hidden={false}
+      >
+        <nav
+          role="navigation"
+          aria-label="Main navigation"
+          className={`w-full rounded-3xl overflow-hidden ${transitionClass} ${
+            isScrolled
+              ? "bg-white/60 dark:bg-black/60 backdrop-blur-md border border-gray-200/20 shadow-md"
+              : "bg-transparent border border-transparent shadow-none"
+          }`}
+        >
+          <div className="max-w-7xl mx-auto px-5">
+            <div className="flex items-center justify-between h-16">
+              {/* Brand */}
+              <Link to="/" className="flex items-center gap-3 no-underline">
+                <div
+                  className={`flex items-center justify-center rounded-full w-10 h-10 flex-shrink-0 ${
+                    isScrolled ? "bg-primary text-white" : "bg-white/20 text-white"
+                  }`}
+                >
+                  <img src={elaicLogo} alt="Elaicle logo" className="h-8 object-contain" />
+                </div>
+
+                <span
+                  className={`ml-1 font-semibold tracking-tight text-sm ${
+                    isScrolled ? "text-gray-900 dark:text-gray-100 opacity-100" : "text-white opacity-0"
+                  } ${transitionClass}`}
+                  aria-hidden={!isScrolled}
+                >
+                  Elaicle
+                </span>
+              </Link>
+
+              {/* Desktop Links */}
+              <div className="hidden lg:flex items-center space-x-8">
+                <div className="flex items-center space-x-6">
+                  {navLinks.map((link) => {
+                    const active = location.pathname === link.href;
+                    return (
+                      <Link
+                        key={link.href}
+                        to={link.href}
+                        className={`text-sm font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-400 ${
+                          isScrolled
+                            ? active
+                              ? "text-primary"
+                              : "text-gray-800 hover:text-primary"
+                            : active
+                            ? "text-white underline"
+                            : "text-white hover:text-white/90"
+                        }`}
+                      >
+                        {link.name}
+                      </Link>
+                    );
+                  })}
+                </div>
+
+                <Button
+                  variant="default"
+                  size="lg"
+                  onClick={() => setBookDemoOpen(true)}
+                >
+                  Book Demo Ride
+                </Button>
+              </div>
+
+              {/* Mobile Controls */}
+              <div className="lg:hidden flex items-center">
+                <button
+                  aria-label={mobileOpen ? "Close menu" : "Open menu"}
+                  aria-expanded={mobileOpen}
+                  onClick={() => setMobileOpen((s) => !s)}
+                  className={`p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-400 ${
+                    isScrolled ? "text-gray-900" : "text-white"
+                  }`}
+                >
+                  {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                </button>
+              </div>
+            </div>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button className="lg:hidden p-2 text-foreground hover:text-primary transition-colors" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-        {isMobileMenuOpen ? <X className="w-6 h-6 text-foreground" /> : <Menu className="w-6 h-6 text-foreground" />}
-          </button>
-        </div>
+          {/* Mobile Panel */}
+          <div
+            className={`lg:hidden ${transitionClass} overflow-hidden ${
+              mobileOpen ? "max-h-[500px] ease-out" : "max-h-0"
+            }`}
+            aria-hidden={!mobileOpen}
+          >
+            <div className="px-5 pb-6 pt-4 bg-background/80 border-t border-gray-200/10">
+              <div className="flex flex-col gap-3">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    to={link.href}
+                    className="block text-base font-medium text-foreground py-2 px-2 rounded-md hover:bg-gray-100/50"
+                  >
+                    {link.name}
+                  </Link>
+                ))}
 
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && <div className="lg:hidden absolute top-full left-0 right-0 bg-background border-t shadow-card-hover">
-            <div className="px-6 py-4 space-y-4">
-              {navLinks.map(link => <Link key={link.name} to={link.href} className="block body-regular font-medium text-foreground hover:text-primary transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
-                  {link.name}
-                </Link>)}
-              <Button 
-                variant="default" 
-                size="lg" 
-                className="w-full mt-4"
-                onClick={() => {
-                  setIsMobileMenuOpen(false);
-                  setIsBookDemoOpen(true);
-                }}
-              >
-                Book Demo Ride
-              </Button>
+                <Button
+                  variant="default"
+                  size="lg"
+                  className="mt-3"
+                  onClick={() => {
+                    setMobileOpen(false);
+                    setBookDemoOpen(true);
+                  }}
+                >
+                  Book Demo Ride
+                </Button>
+              </div>
             </div>
-          </div>}
-      </div>
-      <BookDemoModal isOpen={isBookDemoOpen} onClose={() => setIsBookDemoOpen(false)} />
-    </nav>;
-};
-export default Navigation;
+          </div>
+        </nav>
+      </header>
+
+      {/* Book Demo Modal */}
+      <BookDemoModal isOpen={bookDemoOpen} onClose={() => setBookDemoOpen(false)} />
+    </>
+  );
+}
